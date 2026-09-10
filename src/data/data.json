@@ -1,0 +1,198 @@
+{
+  "carriers": [
+    {
+      "id": "fedex",
+      "name": "FedEx",
+      "regex": "^[0-9]{12,22}$",
+      "logo": "/carriers/fedex.svg",
+      "color": "#4D148C"
+    },
+    {
+      "id": "ups",
+      "name": "UPS",
+      "regex": "^1Z[A-Z0-9]{16}$",
+      "logo": "/carriers/ups.svg",
+      "color": "#FFB500"
+    },
+    {
+      "id": "dhl",
+      "name": "DHL",
+      "regex": "^[0-9]{10,11}$",
+      "logo": "/carriers/dhl.svg",
+      "color": "#FFCC00"
+    },
+    {
+      "id": "usps",
+      "name": "USPS",
+      "regex": "^9[0-9]{21}$",
+      "logo": "/carriers/usps.svg",
+      "color": "#004B87"
+    },
+    {
+      "id": "maersk",
+      "name": "Maersk",
+      "regex": "^MSKU[0-9]{7}$",
+      "logo": "/carriers/maersk.svg",
+      "color": "#42B0D5"
+    }
+  ],
+  "shipments": [
+    {
+      "id": "SHP-5567",
+      "trackingNumber": "784512369045",
+      "carrierId": "fedex",
+      "status": "in_transit",
+      "origin": { "city": "Silicon Valley", "state": "CA", "country": "USA", "lat": 37.3861, "lng": -122.0839 },
+      "destination": { "city": "New York", "state": "NY", "country": "USA", "lat": 40.7128, "lng": -74.006 },
+      "currentLocation": { "city": "Salt Lake City", "state": "UT", "country": "USA", "lat": 40.7608, "lng": -111.891 },
+      "estimatedDelivery": "2026-09-14T18:00:00Z",
+      "eddConfidence": 95,
+      "shippedAt": "2026-09-10T08:00:00Z",
+      "weight": "5.2kg",
+      "dimensions": "30x20x15cm",
+      "sku": "ORD-12567",
+      "milestoneIds": ["m1", "m2", "m3", "m4"]
+    },
+    {
+      "id": "SHP-8821",
+      "trackingNumber": "1Z999AA10123456784",
+      "carrierId": "ups",
+      "status": "out_for_delivery",
+      "origin": { "city": "Chicago", "state": "IL", "country": "USA", "lat": 41.8781, "lng": -87.6298 },
+      "destination": { "city": "Miami", "state": "FL", "country": "USA", "lat": 25.7617, "lng": -80.1918 },
+      "currentLocation": { "city": "Miami", "state": "FL", "country": "USA", "lat": 25.7617, "lng": -80.1918 },
+      "estimatedDelivery": "2026-09-10T20:00:00Z",
+      "eddConfidence": 98,
+      "shippedAt": "2026-09-08T09:00:00Z",
+      "weight": "2.1kg",
+      "dimensions": "20x15x10cm",
+      "sku": "ORD-98871",
+      "milestoneIds": ["m5", "m6", "m7", "m8", "m9"]
+    },
+    {
+      "id": "SHP-3344",
+      "trackingNumber": "1234567890",
+      "carrierId": "dhl",
+      "status": "exception",
+      "origin": { "city": "Frankfurt", "state": "", "country": "Germany", "lat": 50.1109, "lng": 8.6821 },
+      "destination": { "city": "London", "state": "", "country": "UK", "lat": 51.5074, "lng": -0.1278 },
+      "currentLocation": { "city": "Brussels", "state": "", "country": "Belgium", "lat": 50.8503, "lng": 4.3517 },
+      "estimatedDelivery": "2026-09-12T12:00:00Z",
+      "eddConfidence": 72,
+      "shippedAt": "2026-09-07T14:00:00Z",
+      "weight": "8.9kg",
+      "dimensions": "50x40x30cm",
+      "sku": "ORD-33412",
+      "milestoneIds": ["m10", "m11", "m12"]
+    }
+  ],
+  "milestones": [
+    { "id": "m1", "timestamp": "2026-09-10T08:00:00Z", "status": "order_placed", "location": "Silicon Valley, CA", "description": "Shipment information received by seller" },
+    { "id": "m2", "timestamp": "2026-09-10T10:30:00Z", "status": "preparing", "location": "Silicon Valley, CA", "description": "Seller is preparing to ship your order" },
+    { "id": "m3", "timestamp": "2026-09-10T14:00:00Z", "status": "picked_up", "location": "Silicon Valley, CA", "description": "Package picked up by FedEx" },
+    { "id": "m4", "timestamp": "2026-09-11T06:45:00Z", "status": "in_transit", "location": "Salt Lake City, UT", "description": "In transit to destination hub" },
+    { "id": "m5", "timestamp": "2026-09-08T09:00:00Z", "status": "order_placed", "location": "Chicago, IL", "description": "Order placed and confirmed" },
+    { "id": "m6", "timestamp": "2026-09-08T15:00:00Z", "status": "picked_up", "location": "Chicago, IL", "description": "Package collected by UPS" },
+    { "id": "m7", "timestamp": "2026-09-09T08:00:00Z", "status": "in_transit", "location": "Nashville, TN", "description": "Arrived at UPS hub" },
+    { "id": "m8", "timestamp": "2026-09-10T04:00:00Z", "status": "in_transit", "location": "Miami, FL", "description": "Arrived at local delivery facility" },
+    { "id": "m9", "timestamp": "2026-09-10T07:30:00Z", "status": "out_for_delivery", "location": "Miami, FL", "description": "Out for delivery — expected by 8 PM" },
+    { "id": "m10", "timestamp": "2026-09-07T14:00:00Z", "status": "order_placed", "location": "Frankfurt, Germany", "description": "Shipment registered with DHL" },
+    { "id": "m11", "timestamp": "2026-09-08T10:00:00Z", "status": "in_transit", "location": "Frankfurt, Germany", "description": "Departed Frankfurt hub" },
+    { "id": "m12", "timestamp": "2026-09-09T16:00:00Z", "status": "exception", "location": "Brussels, Belgium", "description": "Customs hold — documentation required" }
+  ],
+  "kpis": {
+    "totalShipments": 1482503,
+    "activeTransit": 38421,
+    "deliverySuccessRate": 97.4,
+    "wismoReduction": 68.2,
+    "avgEtaAccuracy": 94.8,
+    "carriersConnected": 3547,
+    "countriesCovered": 220,
+    "airlinesConnected": 193
+  },
+  "wismoChartData": [
+    { "month": "Mar", "tickets": 12400, "reduced": 3800 },
+    { "month": "Apr", "tickets": 11800, "reduced": 4900 },
+    { "month": "May", "tickets": 10900, "reduced": 5800 },
+    { "month": "Jun", "tickets": 9700, "reduced": 6900 },
+    { "month": "Jul", "tickets": 8500, "reduced": 7800 },
+    { "month": "Aug", "tickets": 7200, "reduced": 8400 },
+    { "month": "Sep", "tickets": 6100, "reduced": 9200 }
+  ],
+  "carrierPerformance": [
+    { "carrier": "FedEx", "etaAccuracy": 96.2, "status": "above_sla", "shipments": 248000 },
+    { "carrier": "UPS", "etaAccuracy": 95.8, "status": "above_sla", "shipments": 312000 },
+    { "carrier": "DHL", "etaAccuracy": 93.1, "status": "below_sla", "shipments": 198000 },
+    { "carrier": "USPS", "etaAccuracy": 91.4, "status": "below_sla", "shipments": 156000 },
+    { "carrier": "Maersk", "etaAccuracy": 97.0, "status": "above_sla", "shipments": 89000 }
+  ],
+  "exceptions": [
+    {
+      "id": "EXC-001",
+      "shipmentId": "SHP-3344",
+      "type": "customs_hold",
+      "severity": "high",
+      "message": "Customs documentation missing — shipment held in Brussels",
+      "flaggedAt": "2026-09-09T16:00:00Z",
+      "lastUpdate": "2026-09-10T02:00:00Z",
+      "carrierId": "dhl"
+    },
+    {
+      "id": "EXC-002",
+      "shipmentId": "SHP-9910",
+      "type": "update_lag",
+      "severity": "medium",
+      "message": "No telemetry update for 26 hours — shipment status unknown",
+      "flaggedAt": "2026-09-09T10:00:00Z",
+      "lastUpdate": "2026-09-08T08:00:00Z",
+      "carrierId": "usps"
+    },
+    {
+      "id": "EXC-003",
+      "shipmentId": "SHP-7723",
+      "type": "silent_edd_change",
+      "severity": "medium",
+      "message": "EDD changed from Sep 11 to Sep 14 without delay status code",
+      "flaggedAt": "2026-09-10T01:00:00Z",
+      "lastUpdate": "2026-09-10T01:00:00Z",
+      "carrierId": "fedex"
+    }
+  ],
+  "services": [
+    {
+      "id": "rest-api",
+      "title": "RESTful API Integration",
+      "description": "Connect your platform in minutes with our REST API. Full CRUD operations, OAuth 2.0 auth, and JSON responses with sub-200ms latency.",
+      "icon": "Zap",
+      "features": ["OAuth 2.0", "JSON responses", "Rate limiting", "Sandbox environment"]
+    },
+    {
+      "id": "webhooks",
+      "title": "Real-Time Webhooks",
+      "description": "Push notifications for every shipment event. Exponential-backoff retry logic ensures zero missed updates even during carrier downtime.",
+      "icon": "Webhook",
+      "features": ["Instant push", "Exponential backoff", "Retry queue", "HMAC signatures"]
+    },
+    {
+      "id": "edi",
+      "title": "EDI Connectivity",
+      "description": "Legacy EDI support for ANSI X12 (EDI 214 / 315) and EDIFACT via AS2 or SFTP. Zero disruption to existing carrier workflows.",
+      "icon": "Network",
+      "features": ["ANSI X12", "EDIFACT", "AS2 / SFTP", "EDI 214 & 315"]
+    },
+    {
+      "id": "multi-carrier",
+      "title": "3,500+ Carrier Network",
+      "description": "The largest unified carrier network — 3,500+ carriers and 190+ airlines across 220 countries all normalized into one schema.",
+      "icon": "Globe",
+      "features": ["3,500+ carriers", "190+ airlines", "220 countries", "Auto status normalization"]
+    }
+  ],
+  "faqs": [
+    { "id": "faq1", "question": "How do I track multiple shipments at once?", "answer": "Enter up to 5 tracking numbers separated by commas or on separate lines in the Hero Search Bar on the home page. The system will identify carriers automatically and display all results simultaneously." },
+    { "id": "faq2", "question": "How accurate is the AI Estimated Delivery Date?", "answer": "Our AI EDD engine is trained on 4.4 billion historical shipments and achieves 95% accuracy. A confidence indicator is displayed alongside every prediction." },
+    { "id": "faq3", "question": "Which EDI standards are supported?", "answer": "We support ANSI X12 (EDI 214 Road Status, EDI 315 Ocean Status) and EDIFACT via AS2 or SFTP protocols, covering all major North American and international carrier standards." },
+    { "id": "faq4", "question": "How quickly is shipment data refreshed?", "answer": "Active shipments are polled and refreshed at a sub-60-minute cadence. Real-time IoT-enabled shipments (via Tive or project44 feeds) update instantly via webhook push." },
+    { "id": "faq5", "question": "Is consignee data GDPR compliant?", "answer": "Yes. All PII is encrypted at rest and in transit. Our platform is fully compliant with EU GDPR, including right-to-erasure workflows for consignee data." }
+  ]
+}

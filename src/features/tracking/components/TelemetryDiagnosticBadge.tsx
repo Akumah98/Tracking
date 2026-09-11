@@ -11,7 +11,6 @@ export function TelemetryDiagnosticBadge({ logs }: TelemetryDiagnosticBadgeProps
   const [expanded, setExpanded] = useState(false);
 
   if (!logs || logs.length === 0) return null;
-  const primaryLog = logs[0];
 
   return (
     <div className="w-full bg-white rounded-xl border border-neutral-200/80 p-3 shadow-xs text-xs space-y-2">

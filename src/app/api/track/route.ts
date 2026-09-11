@@ -17,12 +17,10 @@ export async function GET(req: NextRequest) {
   for (const num of numbers.slice(0, 5)) {
     // 1. Direct query from internal Admin-Managed database
     let result = await ShipmentRepository.findByTrackingNumber(num);
-    let source = "admin_database";
 
     // 2. Fallback to pre-seeded manifest if not yet in database
     if (!result) {
       result = TrackingService.getShipmentByTrackingNumber(num);
-      source = "seed_manifest";
     }
 
     if (result) {

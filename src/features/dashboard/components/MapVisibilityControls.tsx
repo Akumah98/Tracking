@@ -1,6 +1,6 @@
 "use client";
 
-import { Eye, EyeOff, CheckSquare, Square } from "lucide-react";
+import { Eye, EyeOff, CheckSquare } from "lucide-react";
 import { Shipment } from "@/types/tracking.types";
 import { getRouteTheme } from "@/features/maps/utils/multiRouteStyles";
 import { cn } from "@/lib/utils";

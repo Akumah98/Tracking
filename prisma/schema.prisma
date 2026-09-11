@@ -1,0 +1,77 @@
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Shipment {
+  id                String      @id @default(uuid())
+  trackingNumber    String      @unique
+  carrierId         String
+  status            String      @default("in_transit")
+  originCity        String
+  originCountry     String
+  originLat         Float
+  originLng         Float
+  destCity          String
+  destCountry       String
+  destLat           Float
+  destLng           Float
+  currentCity       String
+  currentCountry    String
+  currentLat        Float
+  currentLng        Float
+  estimatedDelivery DateTime?
+  eddConfidence     Int         @default(95)
+  weight            String?
+  dimensions        String?
+  sku               String?
+  sourceProvider    String      @default("17track")
+  createdAt         DateTime    @default(now())
+  updatedAt         DateTime    @updatedAt
+  milestones        Milestone[]
+  overrides         AdminOverride[]
+}
+
+model Milestone {
+  id          String   @id @default(uuid())
+  shipmentId  String
+  timestamp   DateTime
+  status      String
+  location    String
+  description String
+  shipment    Shipment @relation(fields: [shipmentId], references: [id], onDelete: Cascade)
+}
+
+model AdminOverride {
+  id         String   @id @default(uuid())
+  shipmentId String
+  field      String
+  oldValue   String?
+  newValue   String
+  reason     String?
+  createdAt  DateTime @default(now())
+  shipment   Shipment @relation(fields: [shipmentId], references: [id], onDelete: Cascade)
+}
+
+model ProviderHealthLog {
+  id         String   @id @default(uuid())
+  provider   String
+  status     String
+  latencyMs  Int
+  message    String?
+  createdAt  DateTime @default(now())
+}
+
+model AdminUser {
+  id           String   @id @default(uuid())
+  email        String   @unique
+  passwordHash String
+  name         String
+  role         String   @default("OPERATOR")
+  createdAt    DateTime @default(now())
+}

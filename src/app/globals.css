@@ -1,27 +1,85 @@
+@import "leaflet/dist/leaflet.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 0 0% 100%;
+    --foreground: 24 100% 2%;
+    --card: 0 0% 100%;
+    --card-foreground: 24 100% 2%;
+    --primary: 20 100% 51%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 24 5% 96%;
+    --secondary-foreground: 24 100% 2%;
+    --muted: 24 4% 96%;
+    --muted-foreground: 25 4% 31%;
+    --border: 24 6% 90%;
+    --input: 24 6% 90%;
+    --radius: 0.5rem;
   }
-}
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  body {
+    @apply bg-[#FAFAFA] text-brand-dark antialiased selection:bg-brand selection:text-white;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-tight text-brand-dark;
+  }
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .hero-glow {
+    background: radial-gradient(circle at 50% 0%, rgba(255, 87, 5, 0.15), transparent 70%);
+  }
+
+  /* Sleek dark Leaflet controls */
+  .leaflet-container {
+    background: #121212 !important;
+    font-family: inherit;
+  }
+
+  .leaflet-bar a {
+    background-color: #1e1e1e !important;
+    color: #e5e5e5 !important;
+    border-color: #333333 !important;
+  }
+
+  .leaflet-bar a:hover {
+    background-color: #2a2a2a !important;
+    color: #ff5705 !important;
+  }
+
+  /* Flowing flight vector dashed animation */
+  @keyframes routeDashFlow {
+    to {
+      stroke-dashoffset: -40;
+    }
+  }
+
+  .animated-route-dash path {
+    animation: routeDashFlow 2.5s linear infinite;
+  }
+
+  /* Apple HIG Frosted Glass & Cupertino Ergonomics */
+  .apple-glass-nav {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+  }
+
+  .apple-glass-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+  }
+
+  .apple-touch-target {
+    min-height: 44px;
+    min-width: 44px;
   }
 }
+

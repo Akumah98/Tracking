@@ -16,17 +16,50 @@
 # production
 /build
 
-# misc
+# misc & OS
 .DS_Store
+Thumbs.db
 *.pem
+*.db
+*.sqlite
+*.sqlite3
 
-# debug
+# debug logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# local env files
+# local env files & secrets
+.env
 .env*.local
+*.env
+*.env.*
+
+# scratch & temporary files
+scratch/
+
+# analysis, graphify & design specs
+graphify-out/
+.graphify/
+*graphify*
+skills-lock.json
+.agents/
+.vscode/
+
+# credentials templates & documents
+carrier-credentials*
+*credentials*
+*.docx
+*SRS*
+*srs*
+
+# mockups, screenshots & reference images
+admin*.jpeg
+admin*.jpg
+admin*.png
+ui*.jpeg
+ui*.jpg
+ui*.png
 
 # vercel
 .vercel

@@ -1,198 +1,622 @@
 {
   "carriers": [
     {
-      "id": "fedex",
-      "name": "FedEx",
-      "regex": "^[0-9]{12,22}$",
-      "logo": "/carriers/fedex.svg",
-      "color": "#4D148C"
+      "id": "itl_air",
+      "name": "International Transport Line Air",
+      "regex": "^ITL-[0-9]{6}-[A-Z]{2}$",
+      "logo": "/branding/itl-air.svg",
+      "color": "#FF5705"
     },
     {
-      "id": "ups",
-      "name": "UPS",
-      "regex": "^1Z[A-Z0-9]{16}$",
-      "logo": "/carriers/ups.svg",
-      "color": "#FFB500"
+      "id": "itl_ocean",
+      "name": "International Transport Line Ocean",
+      "regex": "^ITL-[0-9]{6}-[A-Z]{2}$",
+      "logo": "/branding/itl-ocean.svg",
+      "color": "#0A0500"
     },
     {
-      "id": "dhl",
-      "name": "DHL",
-      "regex": "^[0-9]{10,11}$",
-      "logo": "/carriers/dhl.svg",
-      "color": "#FFCC00"
+      "id": "itl_express",
+      "name": "International Transport Line Express",
+      "regex": "^ITL-[0-9]{6}-[A-Z]{2}$",
+      "logo": "/branding/itl-express.svg",
+      "color": "#FF5705"
     },
     {
-      "id": "usps",
-      "name": "USPS",
-      "regex": "^9[0-9]{21}$",
-      "logo": "/carriers/usps.svg",
-      "color": "#004B87"
-    },
-    {
-      "id": "maersk",
-      "name": "Maersk",
-      "regex": "^MSKU[0-9]{7}$",
-      "logo": "/carriers/maersk.svg",
-      "color": "#42B0D5"
+      "id": "itl_freight",
+      "name": "International Transport Line Rail & Multimodal",
+      "regex": "^ITL-[0-9]{6}-[A-Z]{2}$",
+      "logo": "/branding/itl-freight.svg",
+      "color": "#2563EB"
     }
   ],
   "shipments": [
     {
       "id": "SHP-5567",
-      "trackingNumber": "784512369045",
-      "carrierId": "fedex",
+      "trackingNumber": "ITL-894201-US",
+      "carrierId": "itl_air",
       "status": "in_transit",
-      "origin": { "city": "Silicon Valley", "state": "CA", "country": "USA", "lat": 37.3861, "lng": -122.0839 },
-      "destination": { "city": "New York", "state": "NY", "country": "USA", "lat": 40.7128, "lng": -74.006 },
-      "currentLocation": { "city": "Salt Lake City", "state": "UT", "country": "USA", "lat": 40.7608, "lng": -111.891 },
+      "origin": {
+        "city": "London",
+        "state": "",
+        "country": "United Kingdom",
+        "lat": 51.5074,
+        "lng": -0.1278
+      },
+      "destination": {
+        "city": "New York",
+        "state": "NY",
+        "country": "United States",
+        "lat": 40.7128,
+        "lng": -74.006
+      },
+      "currentLocation": {
+        "city": "JFK Cargo Terminal",
+        "state": "NY",
+        "country": "United States",
+        "lat": 40.6413,
+        "lng": -73.7781
+      },
       "estimatedDelivery": "2026-09-14T18:00:00Z",
-      "eddConfidence": 95,
+      "eddConfidence": 98,
       "shippedAt": "2026-09-10T08:00:00Z",
       "weight": "5.2kg",
       "dimensions": "30x20x15cm",
-      "sku": "ORD-12567",
-      "milestoneIds": ["m1", "m2", "m3", "m4"]
+      "sku": "ORD-894201",
+      "milestoneIds": [
+        "m1",
+        "m2",
+        "m3",
+        "m4"
+      ]
     },
     {
       "id": "SHP-8821",
-      "trackingNumber": "1Z999AA10123456784",
-      "carrierId": "ups",
+      "trackingNumber": "ITL-452109-GB",
+      "carrierId": "itl_express",
       "status": "out_for_delivery",
-      "origin": { "city": "Chicago", "state": "IL", "country": "USA", "lat": 41.8781, "lng": -87.6298 },
-      "destination": { "city": "Miami", "state": "FL", "country": "USA", "lat": 25.7617, "lng": -80.1918 },
-      "currentLocation": { "city": "Miami", "state": "FL", "country": "USA", "lat": 25.7617, "lng": -80.1918 },
+      "origin": {
+        "city": "Frankfurt",
+        "state": "",
+        "country": "Germany",
+        "lat": 50.1109,
+        "lng": 8.6821
+      },
+      "destination": {
+        "city": "Manchester",
+        "state": "",
+        "country": "United Kingdom",
+        "lat": 53.4808,
+        "lng": -2.2426
+      },
+      "currentLocation": {
+        "city": "Manchester Logistics Hub",
+        "state": "",
+        "country": "United Kingdom",
+        "lat": 53.4808,
+        "lng": -2.2426
+      },
       "estimatedDelivery": "2026-09-10T20:00:00Z",
-      "eddConfidence": 98,
-      "shippedAt": "2026-09-08T09:00:00Z",
+      "eddConfidence": 99,
+      "shippedAt": "2026-09-08T12:00:00Z",
       "weight": "2.1kg",
       "dimensions": "20x15x10cm",
-      "sku": "ORD-98871",
-      "milestoneIds": ["m5", "m6", "m7", "m8", "m9"]
+      "sku": "ORD-452109",
+      "milestoneIds": [
+        "m5",
+        "m6",
+        "m7"
+      ]
     },
     {
-      "id": "SHP-3344",
-      "trackingNumber": "1234567890",
-      "carrierId": "dhl",
-      "status": "exception",
-      "origin": { "city": "Frankfurt", "state": "", "country": "Germany", "lat": 50.1109, "lng": 8.6821 },
-      "destination": { "city": "London", "state": "", "country": "UK", "lat": 51.5074, "lng": -0.1278 },
-      "currentLocation": { "city": "Brussels", "state": "", "country": "Belgium", "lat": 50.8503, "lng": 4.3517 },
-      "estimatedDelivery": "2026-09-12T12:00:00Z",
-      "eddConfidence": 72,
-      "shippedAt": "2026-09-07T14:00:00Z",
-      "weight": "8.9kg",
-      "dimensions": "50x40x30cm",
-      "sku": "ORD-33412",
-      "milestoneIds": ["m10", "m11", "m12"]
+      "id": "shp-itl-air-01",
+      "trackingNumber": "ITL-772104-US",
+      "carrierId": "itl_air",
+      "status": "in_transit",
+      "origin": {
+        "city": "Tokyo",
+        "state": "Kanto",
+        "country": "Japan",
+        "lat": 35.5494,
+        "lng": 139.7798
+      },
+      "destination": {
+        "city": "Los Angeles",
+        "state": "CA",
+        "country": "United States",
+        "lat": 33.9416,
+        "lng": -118.4085
+      },
+      "currentLocation": {
+        "city": "Pacific Flight Waypoint G45",
+        "state": "Oceanic",
+        "country": "Pacific",
+        "lat": 41.5,
+        "lng": -175.2
+      },
+      "estimatedDelivery": "2026-09-14T14:00:00Z",
+      "eddConfidence": 98,
+      "shippedAt": "2026-09-11T02:00:00Z",
+      "weight": "420.0kg",
+      "dimensions": "120x80x90cm",
+      "sku": "ORD-772104",
+      "milestoneIds": [
+        "mls-air-01",
+        "mls-air-02",
+        "mls-air-03"
+      ]
+    },
+    {
+      "id": "shp-itl-ocean-01",
+      "trackingNumber": "ITL-993210-DE",
+      "carrierId": "itl_ocean",
+      "status": "in_transit",
+      "origin": {
+        "city": "Shanghai",
+        "state": "",
+        "country": "China",
+        "lat": 31.2304,
+        "lng": 121.4737
+      },
+      "destination": {
+        "city": "Rotterdam",
+        "state": "South Holland",
+        "country": "Netherlands",
+        "lat": 51.9244,
+        "lng": 4.4777
+      },
+      "currentLocation": {
+        "city": "Red Sea Maritime Passage",
+        "state": "International Waters",
+        "country": "Red Sea",
+        "lat": 21,
+        "lng": 38.5
+      },
+      "estimatedDelivery": "2026-09-28T08:00:00Z",
+      "eddConfidence": 94,
+      "shippedAt": "2026-09-02T06:00:00Z",
+      "weight": "24500kg",
+      "dimensions": "40ft Container HC",
+      "sku": "ORD-993210",
+      "milestoneIds": [
+        "mls-ocn-01",
+        "mls-ocn-02",
+        "mls-ocn-03"
+      ]
+    },
+    {
+      "id": "shp-itl-exp-01",
+      "trackingNumber": "ITL-334190-FR",
+      "carrierId": "itl_express",
+      "status": "out_for_delivery",
+      "origin": {
+        "city": "Paris",
+        "state": "Île-de-France",
+        "country": "France",
+        "lat": 48.8566,
+        "lng": 2.3522
+      },
+      "destination": {
+        "city": "Berlin",
+        "state": "Berlin",
+        "country": "Germany",
+        "lat": 52.52,
+        "lng": 13.405
+      },
+      "currentLocation": {
+        "city": "Berlin Spandau Depot",
+        "state": "Berlin",
+        "country": "Germany",
+        "lat": 52.5348,
+        "lng": 13.1975
+      },
+      "estimatedDelivery": "2026-09-11T16:30:00Z",
+      "eddConfidence": 99,
+      "shippedAt": "2026-09-10T19:00:00Z",
+      "weight": "14.8kg",
+      "dimensions": "45x35x25cm",
+      "sku": "ORD-334190",
+      "milestoneIds": [
+        "mls-exp-01",
+        "mls-exp-02",
+        "mls-exp-03"
+      ]
+    },
+    {
+      "id": "shp-itl-rail-01",
+      "trackingNumber": "ITL-552891-GB",
+      "carrierId": "itl_freight",
+      "status": "in_transit",
+      "origin": {
+        "city": "Warsaw",
+        "state": "Masovia",
+        "country": "Poland",
+        "lat": 52.2297,
+        "lng": 21.0122
+      },
+      "destination": {
+        "city": "London",
+        "state": "Greater London",
+        "country": "United Kingdom",
+        "lat": 51.5074,
+        "lng": -0.1278
+      },
+      "currentLocation": {
+        "city": "Channel Tunnel Calais Terminal",
+        "state": "Hauts-de-France",
+        "country": "France",
+        "lat": 50.9513,
+        "lng": 1.8587
+      },
+      "estimatedDelivery": "2026-09-13T10:00:00Z",
+      "eddConfidence": 96,
+      "shippedAt": "2026-09-09T08:00:00Z",
+      "weight": "8200kg",
+      "dimensions": "2x Intermodal Swap-Bodies",
+      "sku": "ORD-552891",
+      "milestoneIds": [
+        "mls-rail-01",
+        "mls-rail-02",
+        "mls-rail-03"
+      ]
+    },
+    {
+      "id": "shp-itl-pharma-01",
+      "trackingNumber": "ITL-118402-CH",
+      "carrierId": "itl_express",
+      "status": "delivered",
+      "origin": {
+        "city": "Zurich",
+        "state": "Zurich",
+        "country": "Switzerland",
+        "lat": 47.3769,
+        "lng": 8.5417
+      },
+      "destination": {
+        "city": "New York",
+        "state": "NY",
+        "country": "United States",
+        "lat": 40.7128,
+        "lng": -74.006
+      },
+      "currentLocation": {
+        "city": "New York Medical Logistics Center",
+        "state": "NY",
+        "country": "United States",
+        "lat": 40.758,
+        "lng": -73.9855
+      },
+      "estimatedDelivery": "2026-09-11T09:15:00Z",
+      "eddConfidence": 100,
+      "shippedAt": "2026-09-09T14:00:00Z",
+      "weight": "32.0kg",
+      "dimensions": "Climate Box VIP-30",
+      "sku": "ORD-118402",
+      "milestoneIds": [
+        "mls-phm-01",
+        "mls-phm-02",
+        "mls-phm-03",
+        "mls-phm-04"
+      ]
     }
   ],
   "milestones": [
-    { "id": "m1", "timestamp": "2026-09-10T08:00:00Z", "status": "order_placed", "location": "Silicon Valley, CA", "description": "Shipment information received by seller" },
-    { "id": "m2", "timestamp": "2026-09-10T10:30:00Z", "status": "preparing", "location": "Silicon Valley, CA", "description": "Seller is preparing to ship your order" },
-    { "id": "m3", "timestamp": "2026-09-10T14:00:00Z", "status": "picked_up", "location": "Silicon Valley, CA", "description": "Package picked up by FedEx" },
-    { "id": "m4", "timestamp": "2026-09-11T06:45:00Z", "status": "in_transit", "location": "Salt Lake City, UT", "description": "In transit to destination hub" },
-    { "id": "m5", "timestamp": "2026-09-08T09:00:00Z", "status": "order_placed", "location": "Chicago, IL", "description": "Order placed and confirmed" },
-    { "id": "m6", "timestamp": "2026-09-08T15:00:00Z", "status": "picked_up", "location": "Chicago, IL", "description": "Package collected by UPS" },
-    { "id": "m7", "timestamp": "2026-09-09T08:00:00Z", "status": "in_transit", "location": "Nashville, TN", "description": "Arrived at UPS hub" },
-    { "id": "m8", "timestamp": "2026-09-10T04:00:00Z", "status": "in_transit", "location": "Miami, FL", "description": "Arrived at local delivery facility" },
-    { "id": "m9", "timestamp": "2026-09-10T07:30:00Z", "status": "out_for_delivery", "location": "Miami, FL", "description": "Out for delivery — expected by 8 PM" },
-    { "id": "m10", "timestamp": "2026-09-07T14:00:00Z", "status": "order_placed", "location": "Frankfurt, Germany", "description": "Shipment registered with DHL" },
-    { "id": "m11", "timestamp": "2026-09-08T10:00:00Z", "status": "in_transit", "location": "Frankfurt, Germany", "description": "Departed Frankfurt hub" },
-    { "id": "m12", "timestamp": "2026-09-09T16:00:00Z", "status": "exception", "location": "Brussels, Belgium", "description": "Customs hold — documentation required" }
+    {
+      "id": "m1",
+      "timestamp": "2026-09-10T08:00:00Z",
+      "status": "order_placed",
+      "location": "London Heathrow Terminal",
+      "description": "Consignment booked with International Transport Line"
+    },
+    {
+      "id": "m2",
+      "timestamp": "2026-09-10T10:30:00Z",
+      "status": "picked_up",
+      "location": "London Depot",
+      "description": "Package received at central consolidation center — box & label processed"
+    },
+    {
+      "id": "m3",
+      "timestamp": "2026-09-10T14:00:00Z",
+      "status": "in_transit",
+      "location": "London Heathrow Hub",
+      "description": "Departed Heathrow on transatlantic cargo flight ITL-204"
+    },
+    {
+      "id": "m4",
+      "timestamp": "2026-09-10T17:00:00Z",
+      "status": "in_transit",
+      "location": "JFK Cargo Terminal, NY",
+      "description": "Arrived at JFK Hub. Customs clearance pre-approved and completed"
+    },
+    {
+      "id": "m5",
+      "timestamp": "2026-09-08T12:00:00Z",
+      "status": "picked_up",
+      "location": "Frankfurt Hub",
+      "description": "Consignment received into smart warehouse inventory"
+    },
+    {
+      "id": "m6",
+      "timestamp": "2026-09-09T18:00:00Z",
+      "status": "in_transit",
+      "location": "Channel Tunnel Transit",
+      "description": "Customs clearance completed. Dispatched to UK regional distribution"
+    },
+    {
+      "id": "m7",
+      "timestamp": "2026-09-10T07:30:00Z",
+      "status": "out_for_delivery",
+      "location": "Manchester Depot",
+      "description": "Out for delivery with dedicated ITL courier"
+    },
+    {
+      "id": "mls-air-01",
+      "timestamp": "2026-09-11T02:00:00Z",
+      "status": "order_placed",
+      "location": "Tokyo Ota Terminal",
+      "description": "Consignment registered with ITL Transpacific Air division"
+    },
+    {
+      "id": "mls-air-02",
+      "timestamp": "2026-09-11T04:30:00Z",
+      "status": "picked_up",
+      "location": "Haneda Airport Cargo Zone",
+      "description": "Cleared pre-flight screening and palletized onto flight ITL-882"
+    },
+    {
+      "id": "mls-air-03",
+      "timestamp": "2026-09-11T08:00:00Z",
+      "status": "in_transit",
+      "location": "Mid-Pacific Flight Vector G45",
+      "description": "Air cargo en-route: Cruising FL380 over North Pacific towards Los Angeles"
+    },
+    {
+      "id": "mls-ocn-01",
+      "timestamp": "2026-09-02T06:00:00Z",
+      "status": "order_placed",
+      "location": "Shanghai Yangshan Port",
+      "description": "Container sealed and loaded onto container vessel ITL-PACIFIC"
+    },
+    {
+      "id": "mls-ocn-02",
+      "timestamp": "2026-09-06T12:00:00Z",
+      "status": "in_transit",
+      "location": "Strait of Malacca Transit",
+      "description": "Maritime vessel underway on scheduled westbound transit"
+    },
+    {
+      "id": "mls-ocn-03",
+      "timestamp": "2026-09-11T03:00:00Z",
+      "status": "in_transit",
+      "location": "Red Sea Passage",
+      "description": "Maintained 19.5 knots speed, scheduled arrival at Rotterdam Europort"
+    },
+    {
+      "id": "mls-exp-01",
+      "timestamp": "2026-09-10T19:00:00Z",
+      "status": "picked_up",
+      "location": "Paris Charles de Gaulle Hub",
+      "description": "Loaded onto express cross-border linehaul transport"
+    },
+    {
+      "id": "mls-exp-02",
+      "timestamp": "2026-09-11T04:00:00Z",
+      "status": "in_transit",
+      "location": "Hanover Highway Corridor",
+      "description": "Transit checkpoint cleared, headed to Berlin distribution cross-dock"
+    },
+    {
+      "id": "mls-exp-03",
+      "timestamp": "2026-09-11T07:30:00Z",
+      "status": "out_for_delivery",
+      "location": "Berlin Spandau Depot",
+      "description": "Out for delivery: In transit with dedicated Berlin courier"
+    },
+    {
+      "id": "mls-rail-01",
+      "timestamp": "2026-09-09T08:00:00Z",
+      "status": "order_placed",
+      "location": "Warsaw Pruszkow Rail Yard",
+      "description": "Intermodal freight loaded onto electrified rail carrier"
+    },
+    {
+      "id": "mls-rail-02",
+      "timestamp": "2026-09-10T16:00:00Z",
+      "status": "in_transit",
+      "location": "Duisburg Intermodal Terminal",
+      "description": "Transshipment switch completed, westbound Euro-corridor rail underway"
+    },
+    {
+      "id": "mls-rail-03",
+      "timestamp": "2026-09-11T05:00:00Z",
+      "status": "in_transit",
+      "location": "Channel Tunnel Calais Terminal",
+      "description": "Arrived at Eurotunnel rail freight portal, customs pre-cleared"
+    },
+    {
+      "id": "mls-phm-01",
+      "timestamp": "2026-09-09T14:00:00Z",
+      "status": "order_placed",
+      "location": "Zurich Bio-Technopark",
+      "description": "Cold-chain pharmaceutical container initialized at -20°C"
+    },
+    {
+      "id": "mls-phm-02",
+      "timestamp": "2026-09-10T02:00:00Z",
+      "status": "in_transit",
+      "location": "Transatlantic Air Flight ITL-CH01",
+      "description": "Continuous telemetric temperature telemetry maintained"
+    },
+    {
+      "id": "mls-phm-03",
+      "timestamp": "2026-09-11T07:00:00Z",
+      "status": "out_for_delivery",
+      "location": "JFK Priority Logistics Dock",
+      "description": "Dispatched via climate-controlled courier vehicle"
+    },
+    {
+      "id": "mls-phm-04",
+      "timestamp": "2026-09-11T09:15:00Z",
+      "status": "delivered",
+      "location": "New York Medical Center",
+      "description": "Delivered & Signed: Temperature verified (-21.2°C intact) by Dr. K. Sterling"
+    }
   ],
   "kpis": {
     "totalShipments": 1482503,
     "activeTransit": 38421,
-    "deliverySuccessRate": 97.4,
-    "wismoReduction": 68.2,
-    "avgEtaAccuracy": 94.8,
-    "carriersConnected": 3547,
+    "deliverySuccessRate": 99.4,
+    "wismoReduction": 78.2,
+    "avgEtaAccuracy": 98.5,
     "countriesCovered": 220,
-    "airlinesConnected": 193
+    "globalHubs": 185,
+    "onTimeRate": 99.2
   },
   "wismoChartData": [
-    { "month": "Mar", "tickets": 12400, "reduced": 3800 },
-    { "month": "Apr", "tickets": 11800, "reduced": 4900 },
-    { "month": "May", "tickets": 10900, "reduced": 5800 },
-    { "month": "Jun", "tickets": 9700, "reduced": 6900 },
-    { "month": "Jul", "tickets": 8500, "reduced": 7800 },
-    { "month": "Aug", "tickets": 7200, "reduced": 8400 },
-    { "month": "Sep", "tickets": 6100, "reduced": 9200 }
+    {
+      "month": "Mar",
+      "tickets": 12400,
+      "reduced": 3800
+    },
+    {
+      "month": "Apr",
+      "tickets": 11800,
+      "reduced": 4900
+    },
+    {
+      "month": "May",
+      "tickets": 10900,
+      "reduced": 5800
+    },
+    {
+      "month": "Jun",
+      "tickets": 9700,
+      "reduced": 6900
+    },
+    {
+      "month": "Jul",
+      "tickets": 8500,
+      "reduced": 7800
+    },
+    {
+      "month": "Aug",
+      "tickets": 7200,
+      "reduced": 8400
+    },
+    {
+      "month": "Sep",
+      "tickets": 6100,
+      "reduced": 9200
+    }
   ],
   "carrierPerformance": [
-    { "carrier": "FedEx", "etaAccuracy": 96.2, "status": "above_sla", "shipments": 248000 },
-    { "carrier": "UPS", "etaAccuracy": 95.8, "status": "above_sla", "shipments": 312000 },
-    { "carrier": "DHL", "etaAccuracy": 93.1, "status": "below_sla", "shipments": 198000 },
-    { "carrier": "USPS", "etaAccuracy": 91.4, "status": "below_sla", "shipments": 156000 },
-    { "carrier": "Maersk", "etaAccuracy": 97.0, "status": "above_sla", "shipments": 89000 }
+    {
+      "carrier": "ITL Air Express",
+      "etaAccuracy": 98.8,
+      "status": "above_sla",
+      "shipments": 480000
+    },
+    {
+      "carrier": "ITL Ocean Container",
+      "etaAccuracy": 97.5,
+      "status": "above_sla",
+      "shipments": 360000
+    },
+    {
+      "carrier": "ITL Overland Logistics",
+      "etaAccuracy": 99.1,
+      "status": "above_sla",
+      "shipments": 420000
+    },
+    {
+      "carrier": "ITL White-Glove Courier",
+      "etaAccuracy": 99.6,
+      "status": "above_sla",
+      "shipments": 220000
+    }
   ],
   "exceptions": [
     {
       "id": "EXC-001",
-      "shipmentId": "SHP-3344",
+      "shipmentId": "SHP-5567",
       "type": "customs_hold",
       "severity": "high",
-      "message": "Customs documentation missing — shipment held in Brussels",
-      "flaggedAt": "2026-09-09T16:00:00Z",
-      "lastUpdate": "2026-09-10T02:00:00Z",
-      "carrierId": "dhl"
-    },
-    {
-      "id": "EXC-002",
-      "shipmentId": "SHP-9910",
-      "type": "update_lag",
-      "severity": "medium",
-      "message": "No telemetry update for 26 hours — shipment status unknown",
-      "flaggedAt": "2026-09-09T10:00:00Z",
-      "lastUpdate": "2026-09-08T08:00:00Z",
-      "carrierId": "usps"
-    },
-    {
-      "id": "EXC-003",
-      "shipmentId": "SHP-7723",
-      "type": "silent_edd_change",
-      "severity": "medium",
-      "message": "EDD changed from Sep 11 to Sep 14 without delay status code",
-      "flaggedAt": "2026-09-10T01:00:00Z",
-      "lastUpdate": "2026-09-10T01:00:00Z",
-      "carrierId": "fedex"
+      "message": "Air cargo flight weather advisory — rerouted via Shannon Gateway to JFK",
+      "flaggedAt": "2026-09-10T16:00:00Z",
+      "lastUpdate": "2026-09-10T18:00:00Z",
+      "carrierId": "itl_air"
     }
   ],
   "services": [
     {
-      "id": "rest-api",
-      "title": "RESTful API Integration",
-      "description": "Connect your platform in minutes with our REST API. Full CRUD operations, OAuth 2.0 auth, and JSON responses with sub-200ms latency.",
-      "icon": "Zap",
-      "features": ["OAuth 2.0", "JSON responses", "Rate limiting", "Sandbox environment"]
+      "id": "air-freight",
+      "title": "Air Freight Solutions",
+      "description": "Clear and consistent communication every step from collection to final delivery. Monitored 24/7 with real-time GPS telemetry.",
+      "icon": "Plane",
+      "features": [
+        "Direct Air Cargo",
+        "Rapid Customs Clearance",
+        "Temperature Controlled",
+        "24/7 Live Monitoring"
+      ]
     },
     {
-      "id": "webhooks",
-      "title": "Real-Time Webhooks",
-      "description": "Push notifications for every shipment event. Exponential-backoff retry logic ensures zero missed updates even during carrier downtime.",
-      "icon": "Webhook",
-      "features": ["Instant push", "Exponential backoff", "Retry queue", "HMAC signatures"]
+      "id": "smart-warehousing",
+      "title": "Smart Warehouses",
+      "description": "Equipped with RFID, automated inspection, and climate monitoring for zero-loss inventory management and automated dispatch.",
+      "icon": "Box",
+      "features": [
+        "Automated RFID",
+        "Online Portal",
+        "Climate Monitored",
+        "Zero Delay Packing"
+      ]
     },
     {
-      "id": "edi",
-      "title": "EDI Connectivity",
-      "description": "Legacy EDI support for ANSI X12 (EDI 214 / 315) and EDIFACT via AS2 or SFTP. Zero disruption to existing carrier workflows.",
-      "icon": "Network",
-      "features": ["ANSI X12", "EDIFACT", "AS2 / SFTP", "EDI 214 & 315"]
+      "id": "friction-free-returns",
+      "title": "Friction-Free Returns",
+      "description": "Leave your package with pros. No box or label necessary. Bring your item to our depot and we handle the rest.",
+      "icon": "RefreshCw",
+      "features": [
+        "No Box Needed",
+        "No Label Printing",
+        "Instant Confirmation",
+        "Merchant Re-stocking"
+      ]
     },
     {
-      "id": "multi-carrier",
-      "title": "3,500+ Carrier Network",
-      "description": "The largest unified carrier network — 3,500+ carriers and 190+ airlines across 220 countries all normalized into one schema.",
-      "icon": "Globe",
-      "features": ["3,500+ carriers", "190+ airlines", "220 countries", "Auto status normalization"]
+      "id": "express-courier",
+      "title": "Global Door-to-Door",
+      "description": "Connecting businesses and people worldwide. Guaranteed on-time delivery with dedicated couriers and white-glove care.",
+      "icon": "Truck",
+      "features": [
+        "Same-Day Dispatch",
+        "Secure Handling",
+        "Proof of Delivery",
+        "Global Customs Coverage"
+      ]
     }
   ],
   "faqs": [
-    { "id": "faq1", "question": "How do I track multiple shipments at once?", "answer": "Enter up to 5 tracking numbers separated by commas or on separate lines in the Hero Search Bar on the home page. The system will identify carriers automatically and display all results simultaneously." },
-    { "id": "faq2", "question": "How accurate is the AI Estimated Delivery Date?", "answer": "Our AI EDD engine is trained on 4.4 billion historical shipments and achieves 95% accuracy. A confidence indicator is displayed alongside every prediction." },
-    { "id": "faq3", "question": "Which EDI standards are supported?", "answer": "We support ANSI X12 (EDI 214 Road Status, EDI 315 Ocean Status) and EDIFACT via AS2 or SFTP protocols, covering all major North American and international carrier standards." },
-    { "id": "faq4", "question": "How quickly is shipment data refreshed?", "answer": "Active shipments are polled and refreshed at a sub-60-minute cadence. Real-time IoT-enabled shipments (via Tive or project44 feeds) update instantly via webhook push." },
-    { "id": "faq5", "question": "Is consignee data GDPR compliant?", "answer": "Yes. All PII is encrypted at rest and in transit. Our platform is fully compliant with EU GDPR, including right-to-erasure workflows for consignee data." }
+    {
+      "id": "faq1",
+      "question": "How do I track my International Transport Line shipment?",
+      "answer": "Simply enter your Consignment or Waybill number (e.g. ITL-894201-US) into the tracking bar on this page to view live telemetry, current hub location, and ETA."
+    },
+    {
+      "id": "faq2",
+      "question": "What makes your shipping friction-free?",
+      "answer": "We eliminate traditional logistics friction: no box or label required when dropping off packages, automated customs documentation, and direct point-to-point courier handoffs."
+    },
+    {
+      "id": "faq3",
+      "question": "How do you handle delicate or high-value items?",
+      "answer": "Our white-glove logistics division specializes in fragile and high-value cargo with personalized handling, shock and climate monitoring, and dedicated transit vehicles."
+    },
+    {
+      "id": "faq4",
+      "question": "How are international customs handled?",
+      "answer": "Our dedicated customs brokerage team pre-clears shipments electronically before cargo arrival, preventing warehouse holding delays."
+    }
   ]
 }

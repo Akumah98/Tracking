@@ -16,8 +16,8 @@ export function MapLoadingSkeleton({ trackingNumber, className }: SkeletonProps)
     >
       <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px]" />
       <div className="relative z-10 flex flex-col items-center gap-3">
-        <div className="w-11 h-11 rounded-full bg-brand/20 border border-brand/40 flex items-center justify-center text-brand">
-          <Radio className="w-5 h-5 animate-spin" />
+        <div className="w-11 h-11 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white">
+          <Radio className="w-5 h-5 animate-spin text-white" />
         </div>
         <p className="text-xs font-semibold text-neutral-300">
           Initializing Geospatial Vector Radar...

@@ -45,10 +45,10 @@ export function AdminSidebar() {
                   "flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold transition-all",
                   isActive
                     ? "bg-brand text-white shadow-sm"
-                    : "text-neutral-400 hover:text-white hover:bg-neutral-800/60"
+                    : "text-neutral-300 hover:text-white hover:bg-neutral-800/60"
                 )}
               >
-                <Icon className="w-4 h-4" />
+                <Icon className="w-4 h-4 text-white" />
                 <span>{link.label}</span>
               </Link>
             );
@@ -65,14 +65,14 @@ export function AdminSidebar() {
           onClick={handleSignOut}
           className="w-full flex items-center gap-2 text-xs text-rose-400 hover:text-rose-300 transition-colors py-1 cursor-pointer"
         >
-          <LogOut className="w-3.5 h-3.5" />
+          <LogOut className="w-3.5 h-3.5 text-white" />
           Terminate Session (Sign Out)
         </button>
         <Link
           href="/"
           className="flex items-center gap-2 text-xs text-neutral-400 hover:text-white transition-colors"
         >
-          <ArrowLeft className="w-3.5 h-3.5" />
+          <ArrowLeft className="w-3.5 h-3.5 text-white" />
           Back to Public Portal
         </Link>
       </div>

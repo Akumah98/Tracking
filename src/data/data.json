@@ -553,6 +553,7 @@
       "title": "Air Freight Solutions",
       "description": "Clear and consistent communication every step from collection to final delivery. Monitored 24/7 with real-time GPS telemetry.",
       "icon": "Plane",
+      "image": "/images/air-cargo-plane.jpg",
       "features": [
         "Direct Air Cargo",
         "Rapid Customs Clearance",
@@ -565,6 +566,7 @@
       "title": "Smart Warehouses",
       "description": "Equipped with RFID, automated inspection, and climate monitoring for zero-loss inventory management and automated dispatch.",
       "icon": "Box",
+      "image": "/images/container-port.jpg",
       "features": [
         "Automated RFID",
         "Online Portal",
@@ -577,6 +579,7 @@
       "title": "Friction-Free Returns",
       "description": "Leave your package with pros. No box or label necessary. Bring your item to our depot and we handle the rest.",
       "icon": "RefreshCw",
+      "image": "/images/returns-package.webp",
       "features": [
         "No Box Needed",
         "No Label Printing",
@@ -589,6 +592,7 @@
       "title": "Global Door-to-Door",
       "description": "Connecting businesses and people worldwide. Guaranteed on-time delivery with dedicated couriers and white-glove care.",
       "icon": "Truck",
+      "image": "/images/express-delivery.webp",
       "features": [
         "Same-Day Dispatch",
         "Secure Handling",
@@ -618,5 +622,64 @@
       "question": "How are international customs handled?",
       "answer": "Our dedicated customs brokerage team pre-clears shipments electronically before cargo arrival, preventing warehouse holding delays."
     }
+  ],
+  "siteMedia": {
+    "heroBanner": {
+      "url": "/images/hero-fleet.jpg",
+      "alt": "Heavy freight carrier fleet on highway"
+    },
+    "trustedServices": {
+      "url": "/images/warehouse-ops.webp",
+      "alt": "Logistics hub automated operations"
+    },
+    "industryLeaders": {
+      "url": "/images/highway-freight.jpg",
+      "alt": "High speed highway freight transport"
+    },
+    "airCargo": {
+      "url": "/images/air-cargo-plane.jpg",
+      "alt": "International air cargo flight operations"
+    },
+    "containerPort": {
+      "url": "/images/container-port.jpg",
+      "alt": "Deep water multimodal container port"
+    },
+    "returnsEasy": {
+      "url": "/images/returns-package.webp",
+      "alt": "Customer package drop-off without box or label"
+    },
+    "businessDelivery": {
+      "url": "/images/express-delivery.webp",
+      "alt": "Courier direct business package delivery"
+    }
+  },
+  "testimonials": [
+    {
+      "id": "test1",
+      "name": "Jose Fuller",
+      "role": "Operations Director",
+      "avatar": "/images/avatars/avatar-1.webp",
+      "quote": "International Transport Line is a lifesaver! Their same-day delivery is reliable and fast. Drivers are professional, and telemetry communication is outstanding."
+    },
+    {
+      "id": "test2",
+      "name": "Barbara Elliot",
+      "role": "Global Supply Chain Lead",
+      "avatar": "/images/avatars/avatar-2.webp",
+      "quote": "I shipped fragile high-value equipment with ITL. Their climate-controlled handling and live GPS telemetry gave us total peace of mind. Arrived flawlessly!"
+    },
+    {
+      "id": "test3",
+      "name": "Marie Stewart",
+      "role": "E-Commerce Founder",
+      "avatar": "/images/avatars/avatar-3.webp",
+      "quote": "ITL offers competitive rates and seamless door-to-door tracking. The friction-free returns feature saves our business hours every week. Truly world-class!"
+    }
+  ],
+  "partners": [
+    { "id": "p1", "name": "Global Cargo Alliance", "logo": "/images/partners/partner-1.svg" },
+    { "id": "p2", "name": "AeroFreight Logistics", "logo": "/images/partners/partner-2.svg" },
+    { "id": "p3", "name": "Intermodal Rail Transit", "logo": "/images/partners/partner-3.svg" },
+    { "id": "p4", "name": "Maritime Secure Line", "logo": "/images/partners/partner-4.svg" }
   ]
 }

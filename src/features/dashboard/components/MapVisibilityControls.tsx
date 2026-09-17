@@ -70,7 +70,7 @@ export function MapVisibilityControls({
               <span className="font-mono font-bold text-[11px]">#{s.trackingNumber}</span>
               <span className="text-[10px] text-neutral-400">({s.origin.city} → {s.destination.city})</span>
               {isVisible ? (
-                <CheckSquare className="w-3.5 h-3.5 text-emerald-400" />
+                <CheckSquare className="w-3.5 h-3.5 text-white" />
               ) : (
                 <EyeOff className="w-3.5 h-3.5 text-neutral-400" />
               )}

@@ -18,7 +18,7 @@ export function Footer() {
               Transporting goods round the globe. We are your trusted partner in moving shipments, eliminating logistics friction, and connecting businesses worldwide with care.
             </p>
             <div className="flex items-center gap-3 text-xs text-neutral-400 pt-2">
-              <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-white/[0.05] border border-white/[0.08]"><Globe className="w-3.5 h-3.5 text-brand" /> 220 Countries</span>
+              <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-white/[0.05] border border-white/[0.08]"><Globe className="w-3.5 h-3.5 text-white" /> 220 Countries</span>
               <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-white/[0.05] border border-white/[0.08]">24/7 Live Telemetry</span>
               <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-white/[0.05] border border-white/[0.08]">Zero Friction</span>
             </div>
@@ -41,15 +41,15 @@ export function Footer() {
             <h4 className="font-heading font-bold text-white text-xs tracking-wider uppercase text-neutral-400">Direct Operations</h4>
             <ul className="space-y-2.5 text-sm text-neutral-400">
               <li className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-brand" />
+                <Mail className="w-4 h-4 text-white" />
                 <span>ops@internationaltransportline.com</span>
               </li>
               <li className="flex items-center gap-2">
-                <Phone className="w-4 h-4 text-brand" />
+                <Phone className="w-4 h-4 text-white" />
                 <span>+1 (800) 459-7890</span>
               </li>
               <li className="flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-brand" />
+                <MapPin className="w-4 h-4 text-white" />
                 <span>Global Freight Network • 220 Regions</span>
               </li>
             </ul>

@@ -1,9 +1,12 @@
 import { NetworkStatsBar } from "@/features/public-pages/components/NetworkStatsBar";
+import { AboutCompanyVisuals } from "@/features/public-pages/components/AboutCompanyVisuals";
+import { PartnerLogosBar } from "@/features/public-pages/components/PartnerLogosBar";
 import { ShieldCheck, Globe2, HeartHandshake } from "lucide-react";
 
 export default function AboutPage() {
   return (
     <div className="py-12 sm:py-16 space-y-16">
+      {/* Header */}
       <div className="container max-w-4xl mx-auto px-4 sm:px-6 text-center space-y-4">
         <span className="text-xs font-bold uppercase tracking-wider text-brand">About Our Company</span>
         <h1 className="text-3xl sm:text-5xl font-heading font-extrabold text-brand-dark tracking-tight">
@@ -14,10 +17,17 @@ export default function AboutPage() {
         </p>
       </div>
 
+      {/* Photography & Real Operational Facts */}
+      <div className="container max-w-7xl mx-auto px-4 sm:px-6">
+        <AboutCompanyVisuals />
+      </div>
+
+      {/* Network Stats */}
       <div className="container max-w-7xl mx-auto px-4 sm:px-6">
         <NetworkStatsBar />
       </div>
 
+      {/* Core Values */}
       <div className="container max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
         <div className="apple-glass-card rounded-3xl border border-black/[0.06] p-7 space-y-4 hover:shadow-lg transition-all">
           <div className="w-12 h-12 rounded-2xl bg-brand/10 text-brand flex items-center justify-center shadow-xs">
@@ -49,6 +59,9 @@ export default function AboutPage() {
           </p>
         </div>
       </div>
+
+      {/* Partner strip */}
+      <PartnerLogosBar />
     </div>
   );
 }

@@ -21,7 +21,7 @@ export function MockRouteMap({
 
       <div className="relative z-10 flex items-center justify-between">
         <div className="flex items-center gap-2 bg-black/60 backdrop-blur px-3 py-1.5 rounded-lg border border-neutral-700/60 text-xs">
-          <Radio className="w-3.5 h-3.5 text-emerald-400 animate-pulse" />
+          <Radio className="w-3.5 h-3.5 text-white animate-pulse" />
           <span>Live IoT Vector (project44)</span>
         </div>
         <div className="bg-black/60 backdrop-blur px-3 py-1.5 rounded-lg border border-neutral-700/60 text-xs font-mono text-neutral-300">
@@ -38,7 +38,7 @@ export function MockRouteMap({
           {/* Origin */}
           <div className="relative z-10 flex flex-col items-center">
             <div className="w-8 h-8 rounded-full bg-neutral-800 border-2 border-neutral-400 flex items-center justify-center text-xs">
-              <MapPin className="w-4 h-4 text-neutral-300" />
+              <MapPin className="w-4 h-4 text-white" />
             </div>
             <span className="text-[11px] font-medium text-neutral-300 mt-2">{origin.city}</span>
           </div>
@@ -56,7 +56,7 @@ export function MockRouteMap({
           {/* Destination */}
           <div className="relative z-10 flex flex-col items-center">
             <div className="w-8 h-8 rounded-full bg-neutral-800 border-2 border-neutral-600 flex items-center justify-center text-xs">
-              <MapPin className="w-4 h-4 text-neutral-500" />
+              <MapPin className="w-4 h-4 text-white" />
             </div>
             <span className="text-[11px] font-medium text-neutral-400 mt-2">{destination.city}</span>
           </div>

@@ -9,32 +9,77 @@ generator client {
 }
 
 model Shipment {
-  id                String      @id @default(uuid())
-  trackingNumber    String      @unique
-  carrierId         String
-  status            String      @default("in_transit")
-  originCity        String
-  originCountry     String
-  originLat         Float
-  originLng         Float
-  destCity          String
-  destCountry       String
-  destLat           Float
-  destLng           Float
-  currentCity       String
-  currentCountry    String
-  currentLat        Float
-  currentLng        Float
-  estimatedDelivery DateTime?
-  eddConfidence     Int         @default(95)
-  weight            String?
-  dimensions        String?
-  sku               String?
-  sourceProvider    String      @default("17track")
-  createdAt         DateTime    @default(now())
-  updatedAt         DateTime    @updatedAt
-  milestones        Milestone[]
-  overrides         AdminOverride[]
+  id                     String         @id @default(uuid())
+  trackingNumber         String         @unique
+  carrierId              String
+  status                 String         @default("in_transit")
+  originCity             String
+  originCountry          String
+  originLat              Float
+  originLng              Float
+  destCity               String
+  destCountry            String
+  destLat                Float
+  destLng                Float
+  currentCity            String
+  currentCountry         String
+  currentLat             Float
+  currentLng             Float
+  estimatedDelivery      DateTime?
+  eddConfidence          Int            @default(95)
+  weight                 String?
+  dimensions             String?
+  sku                    String?
+  sourceProvider         String         @default("17track")
+  createdAt              DateTime       @default(now())
+  updatedAt              DateTime       @updatedAt
+
+  // Shipper
+  shipperName            String?
+  shipperEmail           String?
+  shipperPhone           String?
+  shipperAddress         String?
+  shipperCity            String?
+
+  // Receiver
+  receiverName           String?
+  receiverEmail          String?
+  receiverPhone          String?
+  receiverAddress        String?
+  receiverCity           String?
+
+  // Package details
+  product                String?
+  contents               String?
+  carrier                String?
+  shipmentType           String?
+  shipmentMode           String?
+  carrierReferenceNumber String?
+  paymentMode            String?
+  freightCost            Float?
+  pickupDate             String?
+  pickupTime             String?
+
+  // Computed totals (stored for quick display)
+  totalActualWeight      Float?
+  totalVolumetricWeight  Float?
+  totalVolume            Float?
+
+  milestones             Milestone[]
+  overrides              AdminOverride[]
+  packagePieces          PackagePiece[]
+}
+
+model PackagePiece {
+  id          String   @id @default(uuid())
+  shipmentId  String
+  quantity    Int      @default(1)
+  pieceType   String   @default("Box")
+  length      Float    @default(0)
+  width       Float    @default(0)
+  height      Float    @default(0)
+  description String?
+  shipment    Shipment @relation(fields: [shipmentId], references: [id], onDelete: Cascade)
 }
 
 model Milestone {

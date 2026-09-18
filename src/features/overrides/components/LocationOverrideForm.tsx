@@ -1,6 +1,7 @@
 import { Input } from "@/components/ui/input";
 import { GeoLocation } from "@/types/tracking.types";
 import { AdminMapPicker } from "@/features/maps/components/AdminMapPicker";
+import { LocationAutocomplete } from "@/features/maps/components/LocationAutocomplete";
 
 interface LocationOverrideFormProps {
   location: GeoLocation;
@@ -39,11 +40,11 @@ export function LocationOverrideForm({
         <label className="font-medium text-neutral-700 block mb-1">
           Current Checkpoint City / Hub
         </label>
-        <Input
+        <LocationAutocomplete
           value={city}
-          onChange={(e) => onChange({ city: e.target.value, lat, lng })}
-          placeholder="e.g. Frankfurt Cargo Hub, Germany"
-          required
+          onChange={(newCity) => onChange({ city: newCity, lat, lng })}
+          onLocationSelect={(loc) => onChange({ city: loc.city, lat: loc.lat, lng: loc.lng })}
+          placeholder="e.g. Frankfurt, London Heathrow, JFK Cargo..."
         />
       </div>
 

@@ -21,17 +21,14 @@ export function TrustedServicesFeature() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
           
-          <div className="absolute bottom-4 left-4 right-4 p-4 rounded-2xl bg-white/95 backdrop-blur-md border border-white/40 shadow-lg flex items-center justify-between">
+          <div className="absolute bottom-4 left-4 right-4 p-4 rounded-2xl bg-white/95 backdrop-blur-md border border-white/40 shadow-lg flex items-center">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-brand/10 text-brand flex items-center justify-center shrink-0">
-                <ShieldCheck className="w-5 h-5" />
-              </div>
+              <ShieldCheck className="w-6 h-6 text-black shrink-0" />
               <div>
                 <p className="text-xs font-bold text-brand-dark">Enterprise Ground Facility</p>
                 <p className="text-[11px] text-neutral-500">Certified ISO 9001:2026 Facility</p>
               </div>
             </div>
-            <span className="text-xs font-mono font-extrabold text-emerald-600">100% Secure</span>
           </div>
         </div>
       </div>

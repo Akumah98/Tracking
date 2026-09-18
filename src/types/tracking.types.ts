@@ -1,12 +1,20 @@
+import type { ConsignmentDetails } from "./consignment.types";
+export type { ConsignmentDetails };
+
 export type ShipmentStatus =
-  | "order_placed"
-  | "preparing"
   | "picked_up"
   | "in_transit"
-  | "out_for_delivery"
+  | "on_hold"
+  | "customs_hold"
+  | "supporting_documents_needed"
+  | "seized"
+  | "returned"
   | "delivered"
-  | "exception"
-  | "returned";
+  | "cancelled"
+  | "order_placed"
+  | "preparing"
+  | "out_for_delivery"
+  | "exception";
 
 export interface GeoLocation {
   city: string;
@@ -39,6 +47,8 @@ export interface Shipment {
   dimensions: string;
   sku: string;
   milestoneIds: string[];
+  milestones?: Milestone[];
+  consignment?: ConsignmentDetails;
 }
 
 export interface TrackingSearchInput {

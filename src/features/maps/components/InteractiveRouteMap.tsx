@@ -18,6 +18,7 @@ export interface InteractiveRouteMapProps {
   destination?: GeoLocation;
   currentLocation?: GeoLocation;
   trackingNumber?: string;
+  milestones?: import("@/types/tracking.types").Milestone[];
   className?: string;
 }
 

@@ -9,18 +9,18 @@ const supabase = createClient(
     "placeholder-key"
 );
 
+const SELECT_ALL = "*, milestones:Milestone(*), packagePieces:PackagePiece(*)";
+
 export class ShipmentQueries {
   public static async findByTrackingNumber(num: string): Promise<TrackingResult | null> {
     try {
       const { data, error } = await supabase
         .from("Shipment")
-        .select("*, milestones:Milestone(*)")
+        .select(SELECT_ALL)
         .eq("trackingNumber", num)
         .maybeSingle();
 
-      if (data && !error) {
-        return ShipmentMapper.toTrackingResult(data);
-      }
+      if (data && !error) return ShipmentMapper.toTrackingResult(data);
     } catch {
       // Graceful fallback
     }
@@ -31,12 +31,10 @@ export class ShipmentQueries {
     try {
       const { data, error } = await supabase
         .from("Shipment")
-        .select("*, milestones:Milestone(*)")
+        .select(SELECT_ALL)
         .order("createdAt", { ascending: false });
 
-      if (data && !error) {
-        return data.map(ShipmentMapper.toTrackingResult);
-      }
+      if (data && !error) return data.map(ShipmentMapper.toTrackingResult);
     } catch {
       // Fallback
     }

@@ -19,6 +19,10 @@ export const metadata: Metadata = {
   title: "International Transport Line | Transporting Goods Round The Globe",
   description:
     "Express postal and global freight logistics. Transporting goods round the globe safely, on time, and with care.",
+  icons: {
+    icon: "/images/itl-logo.png",
+    apple: "/images/itl-logo.png",
+  },
 };
 
 export default function RootLayout({

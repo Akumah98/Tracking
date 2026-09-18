@@ -27,6 +27,7 @@ export function UpdatePackageMapPane({ lat, lng, city, onCoordinateChange }: Pro
         <AdminMapPicker
           lat={lat}
           lng={lng}
+          city={city}
           onCoordinateChange={onCoordinateChange}
           className="w-full h-[460px] sm:h-[520px] lg:h-[580px]"
         />

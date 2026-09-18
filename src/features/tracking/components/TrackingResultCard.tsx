@@ -1,19 +1,18 @@
 import { TrackingResult } from "@/types/tracking.types";
 import { StatusBadge } from "./StatusBadge";
-import { EDDCard } from "./EDDCard";
 import { MilestoneTimeline } from "./MilestoneTimeline";
+import { ConsignmentPublicDetails } from "./ConsignmentPublicDetails";
+import { ConsignmentBarcodeView } from "./ConsignmentBarcodeView";
+import { DownloadReceiptButton } from "./DownloadReceiptButton";
 import { Package, Truck } from "lucide-react";
 
-interface TrackingResultCardProps {
-  result: TrackingResult;
-}
+interface TrackingResultCardProps { result: TrackingResult; }
 
 export function TrackingResultCard({ result }: TrackingResultCardProps) {
   const { shipment, milestones } = result;
 
   return (
     <div className="apple-glass-card rounded-3xl border border-black/[0.06] p-5 sm:p-7 shadow-sm space-y-6 transition-all">
-      {/* Header Info */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 border-b border-black/[0.05]">
         <div>
           <div className="flex items-center gap-2">
@@ -29,12 +28,12 @@ export function TrackingResultCard({ result }: TrackingResultCardProps) {
           </h2>
           <span className="text-xs text-neutral-400">Order Reference: {shipment.sku}</span>
         </div>
-        <div>
+        <div className="flex items-center gap-3">
           <StatusBadge status={shipment.status} />
+          <DownloadReceiptButton trackingNumber={shipment.trackingNumber} />
         </div>
       </div>
 
-      {/* Origin & Destination snippet */}
       <div className="grid grid-cols-2 gap-4 py-3 px-4 rounded-2xl bg-black/[0.02] border border-black/[0.04] text-xs">
         <div>
           <span className="text-neutral-400 block text-[11px] font-medium mb-1">Origin</span>
@@ -52,14 +51,10 @@ export function TrackingResultCard({ result }: TrackingResultCardProps) {
         </div>
       </div>
 
-      {/* AI EDD */}
-      <EDDCard
-        estimatedDelivery={shipment.estimatedDelivery}
-        confidence={shipment.eddConfidence}
-      />
-
-      {/* Milestones timeline */}
+      <ConsignmentPublicDetails shipment={shipment} />
+      <ConsignmentBarcodeView trackingNumber={shipment.trackingNumber} />
       <MilestoneTimeline milestones={milestones} />
     </div>
   );
 }
+

@@ -13,8 +13,12 @@ export function useUpdatePackage(shipment: Shipment | null) {
     shipment ? getDefaultMilestoneDescription(shipment.status) : ""
   );
   const [reason, setReason] = useState("");
+  const [pickupDate, setPickupDate] = useState(shipment?.consignment?.pickupDate || "");
+  const [pickupTime, setPickupTime] = useState(shipment?.consignment?.pickupTime || "");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [successMsg, setSuccessMsg] = useState<string | null>(null);
+
+  const isDelivered = status === "delivered";
 
   const handleCoordinateChange = (newLat: number, newLng: number) => {
     setLat(newLat);
@@ -39,6 +43,8 @@ export function useUpdatePackage(shipment: Shipment | null) {
           lng,
           reason,
           milestoneDesc: description,
+          pickupDate: isDelivered ? pickupDate : null,
+          pickupTime: isDelivered ? pickupTime : null,
         }),
       });
 
@@ -55,19 +61,15 @@ export function useUpdatePackage(shipment: Shipment | null) {
   };
 
   return {
-    status,
-    setStatus,
-    city,
-    setCity,
-    lat,
-    lng,
-    description,
-    setDescription,
-    reason,
-    setReason,
-    isSubmitting,
-    successMsg,
-    handleCoordinateChange,
-    handleSubmit,
+    status, setStatus,
+    city, setCity,
+    lat, lng,
+    description, setDescription,
+    reason, setReason,
+    pickupDate, setPickupDate,
+    pickupTime, setPickupTime,
+    isDelivered,
+    isSubmitting, successMsg,
+    handleCoordinateChange, handleSubmit,
   };
 }

@@ -16,7 +16,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="py-12 sm:py-16 space-y-16">
+    <div className="pt-24 sm:pt-32 pb-16 space-y-16">
       <div className="container max-w-4xl mx-auto px-4 sm:px-6 text-center space-y-4">
         <span className="text-xs font-bold uppercase tracking-wider text-brand">24/7 Dedicated Support</span>
         <h1 className="text-3xl sm:text-4xl font-heading font-extrabold text-brand-dark">

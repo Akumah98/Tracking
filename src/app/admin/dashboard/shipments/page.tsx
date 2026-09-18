@@ -1,13 +1,11 @@
 "use client";
 
-import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Shipment } from "@/types/tracking.types";
 import { FleetFilterBar } from "@/features/dashboard/components/FleetFilterBar";
 import { InteractiveRouteMap } from "@/features/maps/components/InteractiveRouteMap";
 import { MapVisibilityControls } from "@/features/dashboard/components/MapVisibilityControls";
 import { ShipmentGrid } from "@/features/dashboard/components/ShipmentGrid";
-import { CreateShipmentModal } from "@/features/dashboard/components/CreateShipmentModal";
 import { useAdminShipments } from "@/features/dashboard/hooks/useAdminShipments";
 import { useShipmentVisibility } from "@/features/dashboard/hooks/useShipmentVisibility";
 import { Button } from "@/components/ui/button";
@@ -26,7 +24,6 @@ export default function AdminShipmentsPage() {
     setStatusFilter,
   } = useAdminShipments();
 
-  const [isCreateOpen, setIsCreateOpen] = useState(false);
   const { visibleIds, visibleShipments, toggleVisibility, toggleAll } = useShipmentVisibility(filtered);
 
   const handleUpdatePackage = (shipment: Shipment) => {
@@ -45,7 +42,7 @@ export default function AdminShipmentsPage() {
           </p>
         </div>
         <Button
-          onClick={() => setIsCreateOpen(true)}
+          onClick={() => router.push("/admin/dashboard/shipments/new")}
           className="bg-brand hover:bg-brand-secondary text-white text-xs font-semibold h-10 px-4 rounded-xl shadow-xs cursor-pointer"
         >
           <Plus className="w-4 h-4 mr-1.5" /> Create Consignment
@@ -98,11 +95,6 @@ export default function AdminShipmentsPage() {
         />
       </div>
 
-      <CreateShipmentModal
-        isOpen={isCreateOpen}
-        onClose={() => setIsCreateOpen(false)}
-        onSuccess={refresh}
-      />
     </div>
   );
 }

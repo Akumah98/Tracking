@@ -14,15 +14,17 @@ const DynamicPicker = dynamic(() => import("./AdminMapPickerInner"), {
 interface Props {
   lat: number;
   lng: number;
+  city?: string;
   onCoordinateChange: (lat: number, lng: number) => void;
   className?: string;
 }
 
-export function AdminMapPicker({ lat, lng, onCoordinateChange, className }: Props) {
+export function AdminMapPicker({ lat, lng, city, onCoordinateChange, className }: Props) {
   return (
     <DynamicPicker
       lat={lat}
       lng={lng}
+      city={city}
       onCoordinateChange={onCoordinateChange}
       className={className}
     />

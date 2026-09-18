@@ -1,6 +1,7 @@
 import { TrackingResult } from "@/types/tracking.types";
 import { ShipmentQueries } from "./shipmentQueries";
 import { ShipmentMutations } from "./shipmentMutations";
+import { ShipmentUpdateService } from "./shipmentUpdateService";
 
 export class ShipmentRepository {
   public static async findByTrackingNumber(num: string): Promise<TrackingResult | null> {
@@ -13,6 +14,10 @@ export class ShipmentRepository {
 
   public static async createShipment(data: any) {
     return ShipmentMutations.createShipment(data);
+  }
+
+  public static async updateFullShipment(data: any) {
+    return ShipmentUpdateService.updateFullShipment(data);
   }
 
   public static async updateLocationAndStatus(params: {

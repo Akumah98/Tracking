@@ -11,13 +11,13 @@ import { AdminOverrideTabs } from "./AdminOverrideTabs";
 import { OverrideSuccessView } from "./OverrideSuccessView";
 import { getDefaultDescription } from "../utils/statusDescriptions";
 
-interface AdminOverrideModalProps {
+interface Props {
   shipment: Shipment | null;
   onClose: () => void;
   onSuccess?: () => void;
 }
 
-export function AdminOverrideModal({ shipment, onClose, onSuccess }: AdminOverrideModalProps) {
+export function AdminOverrideModal({ shipment, onClose, onSuccess }: Props) {
   const [tab, setTab] = useState<"location" | "parcel" | "status">("location");
   const [city, setCity] = useState(shipment?.currentLocation?.city || "");
   const [coords, setCoords] = useState({ lat: shipment?.currentLocation?.lat || 0, lng: shipment?.currentLocation?.lng || 0 });
@@ -35,13 +35,9 @@ export function AdminOverrideModal({ shipment, onClose, onSuccess }: AdminOverri
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          shipmentId: shipment.id,
-          field: tab,
-          city: tab === "location" ? city : loc,
-          lat: tab === "location" ? coords.lat : undefined,
-          lng: tab === "location" ? coords.lng : undefined,
-          status: tab === "status" ? status : undefined,
-          reason: "Manual admin dispatch",
+          shipmentId: shipment.id, field: tab, city: tab === "location" ? city : loc,
+          lat: tab === "location" ? coords.lat : undefined, lng: tab === "location" ? coords.lng : undefined,
+          status: tab === "status" ? status : undefined, reason: "Manual admin dispatch",
           milestoneDesc: tab === "location" ? `In Transit: Arrived at ${city}` : desc,
         }),
       });
@@ -70,22 +66,16 @@ export function AdminOverrideModal({ shipment, onClose, onSuccess }: AdminOverri
           <form onSubmit={handleSave} className="space-y-4 text-xs">
             {tab === "location" && (
               <LocationOverrideForm
-                location={shipment.currentLocation}
-                city={city}
-                lat={coords.lat}
-                lng={coords.lng}
+                location={shipment.currentLocation} city={city} lat={coords.lat} lng={coords.lng}
                 onChange={(up) => { setCity(up.city); setCoords({ lat: up.lat, lng: up.lng }); }}
               />
             )}
             {tab === "parcel" && <ParcelOverrideForm weight={shipment.weight} dimensions={shipment.dimensions} />}
             {tab === "status" && (
               <StatusOverrideForm
-                currentStatus={status}
+                currentStatus={status} location={loc} onLocationChange={setLoc}
                 onStatusChange={(s) => { setStatus(s as any); setDesc(getDefaultDescription(s)); }}
-                description={desc}
-                onDescChange={setDesc}
-                location={loc}
-                onLocationChange={setLoc}
+                description={desc} onDescChange={setDesc}
               />
             )}
             <Button type="submit" className="w-full h-11 rounded-xl bg-brand hover:bg-brand-secondary text-white font-bold">

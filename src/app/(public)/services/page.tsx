@@ -11,7 +11,7 @@ export default function ServicesPage() {
   const { services } = data;
 
   return (
-    <div className="py-12 sm:py-16 space-y-16">
+    <div className="pt-24 sm:pt-32 pb-16 space-y-16">
       {/* Header */}
       <div className="container max-w-5xl mx-auto px-4 sm:px-6 text-center space-y-4">
         <span className="text-xs font-bold uppercase tracking-wider text-brand">Comprehensive Freight Solutions</span>
@@ -41,7 +41,7 @@ export default function ServicesPage() {
       <div className="container max-w-5xl mx-auto px-4 sm:px-6 text-center">
         <div className="bg-[#0E131F] rounded-3xl p-8 sm:p-12 border border-white/[0.08] text-white shadow-2xl space-y-4">
           <ShieldCheck className="w-9 h-9 text-white mx-auto" />
-          <h2 className="text-xl sm:text-3xl font-heading font-extrabold tracking-tight">
+          <h2 className="text-xl sm:text-3xl font-heading font-extrabold tracking-tight text-white">
             Leave Your Consignments With Pros
           </h2>
           <p className="text-xs sm:text-sm text-neutral-400 max-w-lg mx-auto leading-relaxed">

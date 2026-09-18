@@ -1,14 +1,15 @@
 import data from "@/data/data.json";
 import { Globe2, Building2, Clock, CheckCircle2 } from "lucide-react";
+import { AnimatedCounter } from "@/features/animations/components/AnimatedCounter";
 
 export function NetworkStatsBar() {
   const { kpis } = data;
 
   const stats = [
-    { label: "Direct Global Hubs", value: `${kpis.globalHubs}+`, icon: Building2 },
-    { label: "Countries Served", value: `${kpis.countriesCovered}+`, icon: Globe2 },
-    { label: "On-Time Delivery Rate", value: `${kpis.deliverySuccessRate}%`, icon: Clock },
-    { label: "Friction-Free Resolution", value: `${kpis.onTimeRate}%`, icon: CheckCircle2 },
+    { label: "Direct Global Hubs", target: kpis.globalHubs, suffix: "+", icon: Building2 },
+    { label: "Countries Served", target: kpis.countriesCovered, suffix: "+", icon: Globe2 },
+    { label: "On-Time Delivery Rate", target: kpis.deliverySuccessRate, suffix: "%", decimals: 1, icon: Clock },
+    { label: "Friction-Free Resolution", target: kpis.onTimeRate, suffix: "%", decimals: 0, icon: CheckCircle2 },
   ];
 
   return (
@@ -22,7 +23,11 @@ export function NetworkStatsBar() {
                 <Icon className="w-5 h-5 text-white" />
               </div>
               <div className="text-2xl sm:text-3xl font-heading font-extrabold text-white tracking-tight">
-                {item.value}
+                <AnimatedCounter
+                  target={item.target}
+                  suffix={item.suffix}
+                  decimals={item.decimals}
+                />
               </div>
               <div className="text-xs text-neutral-400 font-medium">
                 {item.label}

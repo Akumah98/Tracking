@@ -4,28 +4,28 @@
       "id": "itl_air",
       "name": "International Transport Line Air",
       "regex": "^ITL-[0-9]{6}-[A-Z]{2}$",
-      "logo": "/branding/itl-air.svg",
+      "logo": "/images/itl-logo.png",
       "color": "#FF5705"
     },
     {
       "id": "itl_ocean",
       "name": "International Transport Line Ocean",
       "regex": "^ITL-[0-9]{6}-[A-Z]{2}$",
-      "logo": "/branding/itl-ocean.svg",
+      "logo": "/images/itl-logo.png",
       "color": "#0A0500"
     },
     {
       "id": "itl_express",
       "name": "International Transport Line Express",
       "regex": "^ITL-[0-9]{6}-[A-Z]{2}$",
-      "logo": "/branding/itl-express.svg",
+      "logo": "/images/itl-logo.png",
       "color": "#FF5705"
     },
     {
       "id": "itl_freight",
       "name": "International Transport Line Rail & Multimodal",
       "regex": "^ITL-[0-9]{6}-[A-Z]{2}$",
-      "logo": "/branding/itl-freight.svg",
+      "logo": "/images/itl-logo.png",
       "color": "#2563EB"
     }
   ],
@@ -624,13 +624,44 @@
     }
   ],
   "siteMedia": {
-    "heroBanner": {
-      "url": "/images/hero-fleet.jpg",
-      "alt": "Heavy freight carrier fleet on highway"
+    "branding": {
+      "logoColor": "/images/itl-logo.png",
+      "logoWhite": "/images/itl-white.png",
+      "alt": "International Transport Line Logo"
     },
+    "heroBanner": {
+      "url": "/images/12.jpeg",
+      "alt": "Global multimodal freight carrier network"
+    },
+    "heroSlides": [
+      {
+        "id": "slide-ocean",
+        "url": "/images/12.jpeg",
+        "alt": "Global maritime container ship navigating ocean route"
+      },
+      {
+        "id": "slide-highway",
+        "url": "/images/13.jpeg",
+        "alt": "Heavy highway commercial freight line transport"
+      },
+      {
+        "id": "slide-vessel",
+        "url": "/images/11.jpeg",
+        "alt": "High-capacity multimodal vessel carrying trade containers"
+      },
+      {
+        "id": "slide-air",
+        "url": "/images/air-cargo-plane.jpg",
+        "alt": "International air freight cargo flight operations"
+      }
+    ],
     "trustedServices": {
       "url": "/images/warehouse-ops.webp",
       "alt": "Logistics hub automated operations"
+    },
+    "statsHero": {
+      "url": "/images/9.jpeg",
+      "alt": "International multimodal cargo and global transport network"
     },
     "industryLeaders": {
       "url": "/images/highway-freight.jpg",
@@ -681,5 +712,106 @@
     { "id": "p2", "name": "AeroFreight Logistics", "logo": "/images/partners/partner-2.svg" },
     { "id": "p3", "name": "Intermodal Rail Transit", "logo": "/images/partners/partner-3.svg" },
     { "id": "p4", "name": "Maritime Secure Line", "logo": "/images/partners/partner-4.svg" }
-  ]
+  ],
+  "dashboardShowcase": {
+    "badge": "Live Telematics Platform",
+    "title": "Global Command & Freight Intelligence",
+    "description": "Experience authoritative visibility across 220 countries. Monitor vessel coordinates, sensor telemetry, and dispatch workflows directly from a unified control tower.",
+    "tabs": [
+      {
+        "id": "telemetry",
+        "label": "Fleet Telemetry",
+        "description": "Millisecond GPS coordinates, cold-chain climate sensors, and real-time transit telemetry across air and ocean routes."
+      },
+      {
+        "id": "dispatch",
+        "label": "AI Route Dispatch",
+        "description": "Predictive route engineering dynamically avoiding weather hazards, congestions, and port chokepoints."
+      },
+      {
+        "id": "clearance",
+        "label": "Automated Port Clearance",
+        "description": "Pre-arrival electronic EDI declarations with border agencies to eliminate terminal demurrage fees."
+      }
+    ],
+    "floatingBadges": [
+      { "title": "Live Radar", "value": "1,420 Active Cargo Transits", "status": "nominal" },
+      { "title": "Telematics Sync", "value": "12ms Authoritative Feed", "status": "optimal" },
+      { "title": "Border Clearance", "value": "99.8% First-Pass Velocity", "status": "nominal" }
+    ]
+  },
+  "logisticsAccordions": {
+    "tag": "Multimodal Logistics",
+    "title": "Worldwide Shipping & Advanced Network",
+    "description": "Thanks to our advanced technological infrastructure and expert staff, we operate an interconnected global pipeline moving cargo across sea, land, and air.",
+    "badgeText": "180+ Direct Hubs Worldwide",
+    "items": [
+      {
+        "id": "acc-1",
+        "number": "01",
+        "title": "Priority Air Freight & Express",
+        "content": "Guaranteed block space allocations and chartered aircraft for critical high-value freight, medical supplies, and urgent commercial cargo with 24/7 direct tarmac supervision."
+      },
+      {
+        "id": "acc-2",
+        "number": "02",
+        "title": "Ocean Cargo & Deep Water Ports",
+        "content": "Scheduled FCL and LCL container services linking major international shipping lanes with specialized reefers, hazmat clearance, and real-time vessel tracking."
+      },
+      {
+        "id": "acc-3",
+        "number": "03",
+        "title": "Direct Road Freight & Smart Fleet",
+        "content": "Modern heavy transport vehicles equipped with IoT telematics sensors, smart dispatch, security seals, and dedicated driver teams for door-to-door transit."
+      },
+      {
+        "id": "acc-4",
+        "number": "04",
+        "title": "Smart Warehousing & Cross-Docking",
+        "content": "Fully climate-managed automated fulfilment centers, high-velocity distribution hubs, and friction-free returns consolidation."
+      }
+    ],
+    "locationCatalog": [
+      { "id": "loc-fra", "name": "Frankfurt Cargo Hub (FRA)", "city": "Frankfurt", "country": "Germany", "code": "FRA", "type": "Air Cargo Hub", "lat": 50.0379, "lng": 8.5622 },
+      { "id": "loc-lhr", "name": "London Heathrow Cargo Center (LHR)", "city": "London", "country": "United Kingdom", "code": "LHR", "type": "Air Cargo Hub", "lat": 51.4700, "lng": -0.4543 },
+      { "id": "loc-cdg", "name": "Paris Charles de Gaulle Cargo (CDG)", "city": "Paris", "country": "France", "code": "CDG", "type": "Air Cargo Hub", "lat": 49.0097, "lng": 2.5479 },
+      { "id": "loc-ams", "name": "Amsterdam Schiphol Logistics (AMS)", "city": "Amsterdam", "country": "Netherlands", "code": "AMS", "type": "Air Cargo Hub", "lat": 52.3105, "lng": 4.7683 },
+      { "id": "loc-rot", "name": "Rotterdam Gateway Container Port", "city": "Rotterdam", "country": "Netherlands", "code": "RTM", "type": "Maritime Container Port", "lat": 51.9244, "lng": 4.4777 },
+      { "id": "loc-ham", "name": "Hamburg Port Logistics Terminal", "city": "Hamburg", "country": "Germany", "code": "HAM", "type": "Maritime Container Port", "lat": 53.5511, "lng": 9.9937 },
+      { "id": "loc-jfk", "name": "New York JFK International Cargo (JFK)", "city": "New York", "country": "United States", "code": "JFK", "type": "Air Cargo Hub", "lat": 40.6413, "lng": -73.7781 },
+      { "id": "loc-lax", "name": "Los Angeles Gateway Air Cargo (LAX)", "city": "Los Angeles", "country": "United States", "code": "LAX", "type": "Air Cargo Hub", "lat": 33.9416, "lng": -118.4085 },
+      { "id": "loc-ord", "name": "Chicago O'Hare Logistics Hub (ORD)", "city": "Chicago", "country": "United States", "code": "ORD", "type": "Air Cargo Hub", "lat": 41.9742, "lng": -87.9073 },
+      { "id": "loc-mia", "name": "Miami Americas Cargo Gateway (MIA)", "city": "Miami", "country": "United States", "code": "MIA", "type": "Air Cargo Hub", "lat": 25.7959, "lng": -80.2870 },
+      { "id": "loc-atl", "name": "Atlanta Hartsfield Logistics (ATL)", "city": "Atlanta", "country": "United States", "code": "ATL", "type": "Air Cargo Hub", "lat": 33.6407, "lng": -84.4277 },
+      { "id": "loc-yyz", "name": "Toronto Pearson Cargo Center (YYZ)", "city": "Toronto", "country": "Canada", "code": "YYZ", "type": "Air Cargo Hub", "lat": 43.6777, "lng": -79.6248 },
+      { "id": "loc-yvr", "name": "Vancouver International Air Freight (YVR)", "city": "Vancouver", "country": "Canada", "code": "YVR", "type": "Air Cargo Hub", "lat": 49.1967, "lng": -123.1815 },
+      { "id": "loc-hnd", "name": "Tokyo Haneda Cargo Terminal (HND)", "city": "Tokyo", "country": "Japan", "code": "HND", "type": "Air Cargo Hub", "lat": 35.5494, "lng": 139.7798 },
+      { "id": "loc-nrt", "name": "Tokyo Narita Air Logistics (NRT)", "city": "Tokyo", "country": "Japan", "code": "NRT", "type": "Air Cargo Hub", "lat": 35.7720, "lng": 140.3929 },
+      { "id": "loc-pvg", "name": "Shanghai Pudong Cargo Terminal (PVG)", "city": "Shanghai", "country": "China", "code": "PVG", "type": "Air Cargo Hub", "lat": 31.1443, "lng": 121.8083 },
+      { "id": "loc-hkg", "name": "Hong Kong Air Cargo Hub (HKG)", "city": "Hong Kong", "country": "Hong Kong", "code": "HKG", "type": "Air Cargo Hub", "lat": 22.3080, "lng": 113.9185 },
+      { "id": "loc-sin", "name": "Singapore Changi Airfreight Center (SIN)", "city": "Singapore", "country": "Singapore", "code": "SIN", "type": "Air Cargo Hub", "lat": 1.3644, "lng": 103.9915 },
+      { "id": "loc-icn", "name": "Incheon Logistics Hub (ICN)", "city": "Incheon", "country": "South Korea", "code": "ICN", "type": "Air Cargo Hub", "lat": 37.4602, "lng": 126.4407 },
+      { "id": "loc-dxb", "name": "Dubai Al Maktoum & DXB Logistics (DXB)", "city": "Dubai", "country": "United Arab Emirates", "code": "DXB", "type": "Air Cargo Hub", "lat": 25.2532, "lng": 55.3657 },
+      { "id": "loc-doh", "name": "Doha Hamad Cargo Terminal (DOH)", "city": "Doha", "country": "Qatar", "code": "DOH", "type": "Air Cargo Hub", "lat": 25.2609, "lng": 51.5651 },
+      { "id": "loc-syd", "name": "Sydney Kingsford Smith Cargo (SYD)", "city": "Sydney", "country": "Australia", "code": "SYD", "type": "Air Cargo Hub", "lat": -33.9399, "lng": 151.1753 },
+      { "id": "loc-mel", "name": "Melbourne Tullamarine Freight (MEL)", "city": "Melbourne", "country": "Australia", "code": "MEL", "type": "Air Cargo Hub", "lat": -37.6690, "lng": 144.8410 },
+      { "id": "loc-dla", "name": "Douala Autonomous Port & Cargo", "city": "Douala", "country": "Cameroon", "code": "DLA", "type": "Seaport & Cargo Terminal", "lat": 4.0511, "lng": 9.7679 },
+      { "id": "loc-yaounde", "name": "Yaoundé Nsimalen Hub", "city": "Yaounde", "country": "Cameroon", "code": "NSI", "type": "Air Cargo Hub", "lat": 3.8480, "lng": 11.5021 },
+      { "id": "loc-los", "name": "Lagos Murtala Muhammed Cargo (LOS)", "city": "Lagos", "country": "Nigeria", "code": "LOS", "type": "Air Cargo Hub", "lat": 6.5774, "lng": 3.3212 },
+      { "id": "loc-acc", "name": "Accra Kotoka Air Cargo (ACC)", "city": "Accra", "country": "Ghana", "code": "ACC", "type": "Air Cargo Hub", "lat": 5.6052, "lng": -0.1668 },
+      { "id": "loc-jnb", "name": "Johannesburg O.R. Tambo Logistics (JNB)", "city": "Johannesburg", "country": "South Africa", "code": "JNB", "type": "Air Cargo Hub", "lat": -26.1367, "lng": 28.2411 },
+      { "id": "loc-nbo", "name": "Nairobi Jomo Kenyatta Cargo (NBO)", "city": "Nairobi", "country": "Kenya", "code": "NBO", "type": "Air Cargo Hub", "lat": -1.3192, "lng": 36.9278 },
+      { "id": "loc-cai", "name": "Cairo International Air Cargo (CAI)", "city": "Cairo", "country": "Egypt", "code": "CAI", "type": "Air Cargo Hub", "lat": 30.1219, "lng": 31.4056 },
+      { "id": "loc-zrh", "name": "Zurich World Cargo Logistics (ZRH)", "city": "Zurich", "country": "Switzerland", "code": "ZRH", "type": "Air Cargo Hub", "lat": 47.4582, "lng": 8.5555 },
+      { "id": "loc-bru", "name": "Brussels European Cargo Logistics (BRU)", "city": "Brussels", "country": "Belgium", "code": "BRU", "type": "Air Cargo Hub", "lat": 50.9010, "lng": 4.4856 },
+      { "id": "loc-mad", "name": "Madrid-Barajas Air Cargo Terminal (MAD)", "city": "Madrid", "country": "Spain", "code": "MAD", "type": "Air Cargo Hub", "lat": 40.4839, "lng": -3.5680 },
+      { "id": "loc-mxp", "name": "Milan Malpensa CargoCity (MXP)", "city": "Milan", "country": "Italy", "code": "MXP", "type": "Air Cargo Hub", "lat": 45.6301, "lng": 8.7255 },
+      { "id": "loc-waw", "name": "Warsaw Chopin Logistics Hub (WAW)", "city": "Warsaw", "country": "Poland", "code": "WAW", "type": "Air Cargo Hub", "lat": 52.1672, "lng": 20.9679 },
+      { "id": "loc-ist", "name": "Istanbul Mega Cargo Gateway (IST)", "city": "Istanbul", "country": "Turkey", "code": "IST", "type": "Air Cargo Hub", "lat": 41.2753, "lng": 28.7519 },
+      { "id": "loc-bom", "name": "Mumbai Chhatrapati Cargo (BOM)", "city": "Mumbai", "country": "India", "code": "BOM", "type": "Air Cargo Hub", "lat": 19.0896, "lng": 72.8656 },
+      { "id": "loc-del", "name": "Delhi Indira Gandhi Air Cargo (DEL)", "city": "Delhi", "country": "India", "code": "DEL", "type": "Air Cargo Hub", "lat": 28.5562, "lng": 77.1000 },
+      { "id": "loc-gru", "name": "São Paulo Guarulhos Logistics (GRU)", "city": "Sao Paulo", "country": "Brazil", "code": "GRU", "type": "Air Cargo Hub", "lat": -23.4356, "lng": -46.4731 },
+      { "id": "loc-eze", "name": "Buenos Aires Ezeiza Cargo Gateway (EZE)", "city": "Buenos Aires", "country": "Argentina", "code": "EZE", "type": "Air Cargo Hub", "lat": -34.8150, "lng": -58.5348 }
+    ]
+  }
 }

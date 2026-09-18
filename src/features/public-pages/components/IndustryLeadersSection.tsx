@@ -64,7 +64,7 @@ export function IndustryLeadersSection() {
               <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping" />
               <span>Trans-Continental Highway Lane Active</span>
             </div>
-            <span className="text-[11px] font-mono text-brand">GPS Synced</span>
+            <span className="text-[11px] font-mono text-white">GPS Synced</span>
           </div>
         </div>
       </div>

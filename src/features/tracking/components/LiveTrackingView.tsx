@@ -41,7 +41,7 @@ export function LiveTrackingView({ initialNumbers }: LiveTrackingViewProps) {
   }
 
   const selectedTrackingNumber = selectedIdx >= 0 ? results[selectedIdx]?.shipment.trackingNumber : undefined;
-  const shipments = results.map((r) => r.shipment);
+  const shipments = results.map((r) => ({ ...r.shipment, milestones: r.milestones }));
 
   const handleMapSelect = (tn: string) => {
     const idx = results.findIndex((r) => r.shipment.trackingNumber === tn);

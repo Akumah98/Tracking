@@ -17,26 +17,22 @@ interface Props {
   setDescription: (desc: string) => void;
   reason: string;
   setReason: (reason: string) => void;
+  pickupDate: string;
+  setPickupDate: (v: string) => void;
+  pickupTime: string;
+  setPickupTime: (v: string) => void;
+  isDelivered: boolean;
   isSubmitting: boolean;
   successMsg: string | null;
   onSubmit: (e: React.FormEvent) => void;
 }
 
 export function UpdatePackageFormPane({
-  status,
-  setStatus,
-  city,
-  setCity,
-  lat,
-  lng,
-  onCoordinateChange,
-  description,
-  setDescription,
-  reason,
-  setReason,
-  isSubmitting,
-  successMsg,
-  onSubmit,
+  status, setStatus, city, setCity, lat, lng,
+  onCoordinateChange, description, setDescription,
+  reason, setReason, pickupDate, setPickupDate,
+  pickupTime, setPickupTime, isDelivered,
+  isSubmitting, successMsg, onSubmit,
 }: Props) {
   return (
     <form onSubmit={onSubmit} className="bg-white rounded-2xl border border-neutral-200/80 p-5 shadow-xs space-y-4">
@@ -45,17 +41,15 @@ export function UpdatePackageFormPane({
       </h3>
 
       <UpdatePackageInputFields
-        status={status}
-        setStatus={setStatus}
-        city={city}
-        setCity={setCity}
-        lat={lat}
-        lng={lng}
+        status={status} setStatus={setStatus}
+        city={city} setCity={setCity}
+        lat={lat} lng={lng}
         onCoordinateChange={onCoordinateChange}
-        description={description}
-        setDescription={setDescription}
-        reason={reason}
-        setReason={setReason}
+        description={description} setDescription={setDescription}
+        reason={reason} setReason={setReason}
+        pickupDate={pickupDate} setPickupDate={setPickupDate}
+        pickupTime={pickupTime} setPickupTime={setPickupTime}
+        isDelivered={isDelivered}
       />
 
       {successMsg && (

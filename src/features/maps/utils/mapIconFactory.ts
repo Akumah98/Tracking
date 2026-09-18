@@ -56,3 +56,21 @@ export function createVectorIcon(city: string, tracking?: string, color: string 
     iconAnchor: [0, 0],
   });
 }
+
+export function createWaypointIcon(city: string, labelText?: string, color: string = "#f59e0b") {
+  const label = labelText || city;
+  return L.divIcon({
+    className: "custom-map-icon",
+    html: `
+      <div class="flex flex-col items-center -translate-x-1/2 -translate-y-full cursor-pointer">
+        <span class="px-2 py-0.5 rounded-md bg-neutral-900/90 text-[10px] font-bold border border-white/20 shadow-md whitespace-nowrap mb-1" style="color:${color}">
+          📍 ${label}
+        </span>
+        <div class="w-2.5 h-2.5 rounded-full border-2 border-white shadow-md" style="background-color:${color}"></div>
+      </div>
+    `,
+    iconSize: [0, 0],
+    iconAnchor: [0, 0],
+  });
+}
+

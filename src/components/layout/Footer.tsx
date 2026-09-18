@@ -1,18 +1,28 @@
 import Link from "next/link";
-import { Truck, Mail, Phone, MapPin, Globe } from "lucide-react";
+import Image from "next/image";
+import { Mail, Phone, MapPin, Globe } from "lucide-react";
 import { NAV_LINKS } from "@/lib/constants";
+import data from "@/data/data.json";
 
 export function Footer() {
+  const { branding } = data.siteMedia;
+
   return (
     <footer className="w-full bg-[#0E131F] text-neutral-300 pt-16 pb-10 border-t border-white/[0.08]">
       <div className="container max-w-7xl mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-white/[0.08]">
           <div className="md:col-span-2 space-y-4">
-            <div className="flex items-center gap-2.5">
-              <div className="w-10 h-10 rounded-2xl bg-brand flex items-center justify-center text-white shadow-sm ring-1 ring-white/20">
-                <Truck className="w-5 h-5" />
+            <div className="flex items-center gap-3">
+              <div className="relative w-12 h-12 flex items-center justify-center">
+                <Image
+                  src={branding.logoWhite}
+                  alt={branding.alt}
+                  width={48}
+                  height={48}
+                  className="w-12 h-12 object-contain drop-shadow-sm"
+                />
               </div>
-              <span className="font-heading font-extrabold text-lg text-white tracking-tight">INTERNATIONAL TRANSPORT LINE</span>
+              <span className="font-heading font-extrabold text-lg sm:text-xl text-white tracking-tight">INTERNATIONAL TRANSPORT LINE</span>
             </div>
             <p className="text-sm text-neutral-400 max-w-md leading-relaxed">
               Transporting goods round the globe. We are your trusted partner in moving shipments, eliminating logistics friction, and connecting businesses worldwide with care.

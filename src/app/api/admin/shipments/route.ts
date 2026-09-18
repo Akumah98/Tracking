@@ -37,6 +37,27 @@ export async function POST(req: NextRequest) {
   }
 }
 
+export async function PUT(req: NextRequest) {
+  try {
+    const supabase = createClient();
+    const { data: { user } } = await supabase.auth.getUser();
+    if (!user || !isAuthorizedAdmin(user)) {
+      return NextResponse.json({ error: "Unauthorized. Admin clearance required." }, { status: 401 });
+    }
+
+    const body = await req.json();
+    if (!body.id && !body.shipmentId) {
+      return NextResponse.json({ error: "Shipment ID is required for update" }, { status: 400 });
+    }
+
+    const updated = await ShipmentRepository.updateFullShipment(body);
+    return NextResponse.json({ success: true, data: updated });
+  } catch (err: unknown) {
+    const msg = err instanceof Error ? err.message : "Update failed";
+    return NextResponse.json({ success: false, error: msg }, { status: 500 });
+  }
+}
+
 export async function DELETE(req: NextRequest) {
   try {
     const supabase = createClient();

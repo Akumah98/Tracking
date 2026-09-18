@@ -1,10 +1,12 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { LayoutDashboard, Truck, AlertTriangle, ArrowLeft, ShieldCheck, LogOut } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useAdminAuth } from "@/features/auth/hooks/useAdminAuth";
+import data from "@/data/data.json";
 
 const links = [
   { href: "/admin/dashboard", label: "KPI Overview", icon: LayoutDashboard },
@@ -15,13 +17,20 @@ const links = [
 export function AdminSidebar() {
   const pathname = usePathname();
   const { handleSignOut } = useAdminAuth();
+  const { branding } = data.siteMedia;
 
   return (
     <aside className="w-64 bg-brand-dark text-neutral-300 h-full overflow-y-auto p-5 flex flex-col justify-between border-r border-neutral-800">
       <div className="space-y-8">
         <div className="flex items-center gap-2.5 px-2">
-          <div className="w-8 h-8 rounded-lg bg-brand flex items-center justify-center text-white">
-            <ShieldCheck className="w-4 h-4" />
+          <div className="relative w-8 h-8 flex items-center justify-center">
+            <Image
+              src={branding.logoWhite}
+              alt={branding.alt}
+              width={32}
+              height={32}
+              className="w-8 h-8 object-contain"
+            />
           </div>
           <div>
             <h2 className="font-heading font-extrabold text-sm text-white leading-tight">

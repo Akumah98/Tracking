@@ -13,8 +13,8 @@ interface Props {
 
 export function MapHeaderHUD({ shipments, selectedTrackingNumber, onSelect }: Props) {
   return (
-    <div className="relative z-10 p-3 sm:p-4 flex flex-wrap items-center justify-between gap-2 pointer-events-none">
-      <div className="flex items-center gap-2 bg-neutral-950/85 backdrop-blur-md px-3.5 py-1.5 rounded-xl border border-neutral-800 text-xs text-white shadow-md pointer-events-auto">
+    <div className="relative z-10 p-3 sm:p-4 flex flex-wrap items-start justify-between gap-2 pointer-events-none">
+      <div className="mt-16 sm:mt-[68px] flex items-center gap-2 bg-neutral-950/85 backdrop-blur-md px-3.5 py-1.5 rounded-xl border border-neutral-800 text-xs text-white shadow-md pointer-events-auto">
         <Radio className="w-3.5 h-3.5 text-white animate-pulse" />
         <span className="font-semibold">ITL Radar Vector</span>
         <span className="text-neutral-500">|</span>

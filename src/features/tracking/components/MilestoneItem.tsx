@@ -13,7 +13,15 @@ export function MilestoneItem({ milestone, isLatest }: MilestoneItemProps) {
       case "delivered":
         return <CheckCircle2 className="w-4 h-4 text-emerald-600" />;
       case "exception":
+      case "seized":
+      case "cancelled":
         return <AlertTriangle className="w-4 h-4 text-rose-600" />;
+      case "on_hold":
+      case "customs_hold":
+      case "supporting_documents_needed":
+      case "returned":
+        return <AlertTriangle className="w-4 h-4 text-amber-500" />;
+      case "picked_up":
       case "out_for_delivery":
       case "in_transit":
         return <Package className="w-4 h-4 text-blue-600" />;
@@ -38,13 +46,15 @@ export function MilestoneItem({ milestone, isLatest }: MilestoneItemProps) {
       <div className="flex-1 pt-0.5">
         <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1.5">
           <h4 className="text-sm font-heading font-extrabold text-neutral-900 capitalize tracking-tight">
-            {milestone.status.replace("_", " ")}
+            {milestone.status.replace(/_/g, " ")}
           </h4>
           <time className="text-[11px] font-mono font-medium px-2 py-0.5 rounded-full bg-black/[0.03] text-neutral-500">
             {formatDate(milestone.timestamp)}
           </time>
         </div>
-        <p className="text-xs text-neutral-600 mt-1 leading-relaxed">{milestone.description}</p>
+        <p className={`text-xs mt-1 leading-relaxed ${isLatest ? "text-neutral-900 font-medium" : "text-neutral-600"}`}>
+          {milestone.description}
+        </p>
         <span className="inline-flex items-center gap-1 mt-1 text-[11px] text-neutral-400 font-medium">
           📍 {milestone.location}
         </span>

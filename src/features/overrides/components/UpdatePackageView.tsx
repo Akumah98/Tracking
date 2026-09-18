@@ -1,94 +1,87 @@
 "use client";
 
-import { useState } from "react";
 import { Shipment } from "@/types/tracking.types";
-import { useUpdatePackage } from "../hooks/useUpdatePackage";
+import { useUpdatePackageForm } from "../hooks/useUpdatePackageForm";
+import { usePackagePieces } from "@/features/consignment/hooks/usePackagePieces";
 import { UpdatePackageHeader } from "./UpdatePackageHeader";
-import { UpdatePackageMapPane } from "./UpdatePackageMapPane";
-import { UpdatePackageFormPane } from "./UpdatePackageFormPane";
-import { Map, FileText } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { UpdatePackageTabs } from "./UpdatePackageTabs";
+import { UpdateTelematicsSection } from "./UpdateTelematicsSection";
+import { UpdateContactsSection } from "./UpdateContactsSection";
+import { UpdatePackageSpecsSection } from "./UpdatePackageSpecsSection";
+import { UpdatePiecesSection } from "./UpdatePiecesSection";
+import { UpdatePackageActionsBar } from "./UpdatePackageActionsBar";
+import { ConsignmentUpdateConfirmModal } from "./ConsignmentUpdateConfirmModal";
 
-interface Props {
-  shipment: Shipment;
-}
+interface Props { shipment: Shipment; }
 
 export function UpdatePackageView({ shipment }: Props) {
-  const [showMap, setShowMap] = useState(true);
-  const {
-    status,
-    setStatus,
-    city,
-    setCity,
-    lat,
-    lng,
-    description,
-    setDescription,
-    reason,
-    setReason,
-    isSubmitting,
-    successMsg,
-    handleCoordinateChange,
-    handleSubmit,
-  } = useUpdatePackage(shipment);
+  const form = useUpdatePackageForm(shipment);
+  const actualWeight = parseFloat(form.pkg.weight) || 0;
+  const { pieces, addPiece, removePiece, updatePiece, totals } = usePackagePieces(
+    actualWeight, shipment.consignment?.packagePieces
+  );
+
+  const handleOpenReview = () => {
+    if (!form.description.trim()) {
+      form.setErrorMsg("Admin comment is required. Please provide an activity telemetry update comment.");
+      return;
+    }
+    form.setErrorMsg(null);
+    form.setIsConfirmModalOpen(true);
+  };
+
+  const handleConfirmSubmit = () => {
+    form.submitUpdate(pieces, totals);
+  };
+
+  const diffs = form.getDiffs(pieces.length);
 
   return (
-    <div className="space-y-6 max-w-7xl mx-auto pb-12">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+    <div className="space-y-6 max-w-7xl mx-auto pb-16">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <UpdatePackageHeader shipment={shipment} />
-        <div className="flex items-center gap-1.5 p-1 rounded-xl bg-neutral-200/60 border border-black/[0.04] self-start sm:self-auto">
-          <button
-            onClick={() => setShowMap(true)}
-            className={cn(
-              "px-3 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5 cursor-pointer",
-              showMap ? "bg-white text-brand-dark shadow-xs" : "text-neutral-600 hover:text-neutral-900"
-            )}
-          >
-            <Map className="w-3.5 h-3.5 text-brand" /> Map &amp; Form
-          </button>
-          <button
-            onClick={() => setShowMap(false)}
-            className={cn(
-              "px-3 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5 cursor-pointer",
-              !showMap ? "bg-white text-brand-dark shadow-xs" : "text-neutral-600 hover:text-neutral-900"
-            )}
-          >
-            <FileText className="w-3.5 h-3.5 text-brand" /> Form Only (No Map)
-          </button>
-        </div>
+        <UpdatePackageTabs activeTab={form.activeTab} onTabChange={form.setActiveTab} />
       </div>
 
-      <div className={cn("grid gap-6 items-start", showMap ? "grid-cols-1 lg:grid-cols-12" : "max-w-2xl mx-auto")}>
-        {showMap && (
-          <div className="lg:col-span-7">
-            <UpdatePackageMapPane
-              lat={lat}
-              lng={lng}
-              city={city}
-              onCoordinateChange={handleCoordinateChange}
-            />
-          </div>
-        )}
-
-        <div className={cn(showMap ? "lg:col-span-5" : "w-full")}>
-          <UpdatePackageFormPane
-            status={status}
-            setStatus={setStatus}
-            city={city}
-            setCity={setCity}
-            lat={lat}
-            lng={lng}
-            onCoordinateChange={handleCoordinateChange}
-            description={description}
-            setDescription={setDescription}
-            reason={reason}
-            setReason={setReason}
-            isSubmitting={isSubmitting}
-            successMsg={successMsg}
-            onSubmit={handleSubmit}
+      <div>
+        {form.activeTab === "telematics" && (
+          <UpdateTelematicsSection
+            status={form.status} setStatus={form.setStatus} city={form.city} setCity={form.setCity}
+            lat={form.lat} lng={form.lng} onCoordinateChange={(lt, lg) => { form.setLat(lt); form.setLng(lg); }}
+            description={form.description} setDescription={form.setDescription}
+            reason={form.reason} setReason={form.setReason}
+            pickupDate={form.pickupDate} setPickupDate={form.setPickupDate}
+            pickupTime={form.pickupTime} setPickupTime={form.setPickupTime}
           />
-        </div>
+        )}
+        {form.activeTab === "contacts" && (
+          <UpdateContactsSection
+            shipper={form.shipper} onShipperChange={form.updateShipper}
+            receiver={form.receiver} onReceiverChange={form.updateReceiver}
+          />
+        )}
+        {form.activeTab === "package" && <UpdatePackageSpecsSection data={form.pkg} onChange={form.updatePkg} />}
+        {form.activeTab === "pieces" && (
+          <UpdatePiecesSection pieces={pieces} totals={totals} onAdd={addPiece} onRemove={removePiece} onChange={updatePiece} />
+        )}
       </div>
+
+      <UpdatePackageActionsBar
+        isSubmitting={form.isSubmitting} successMsg={form.successMsg} errorMsg={form.errorMsg}
+        onSubmit={handleOpenReview}
+      />
+
+      <ConsignmentUpdateConfirmModal
+        isOpen={form.isConfirmModalOpen}
+        onClose={() => form.setIsConfirmModalOpen(false)}
+        onConfirm={handleConfirmSubmit}
+        isSubmitting={form.isSubmitting}
+        isSuccess={form.isSuccess}
+        trackingNumber={shipment.trackingNumber}
+        diffs={diffs}
+        errorMsg={form.errorMsg}
+      />
     </div>
   );
 }
+

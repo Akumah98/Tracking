@@ -1,25 +1,25 @@
 import { HomeHeroVisual } from "@/features/public-pages/components/HomeHeroVisual";
 import { PartnerLogosBar } from "@/features/public-pages/components/PartnerLogosBar";
-import { NetworkStatsBar } from "@/features/public-pages/components/NetworkStatsBar";
+import { LogisticsAccordionSection } from "@/features/public-pages/components/InteractiveLogisticsAccordion/LogisticsAccordionSection";
 import { TrustedServicesFeature } from "@/features/public-pages/components/TrustedServicesFeature";
+import { NetworkStatsHeroSection } from "@/features/public-pages/components/NetworkStatsHeroSection";
 import { IndustryLeadersSection } from "@/features/public-pages/components/IndustryLeadersSection";
 import { AirFreightFeature } from "@/features/public-pages/components/AirFreightFeature";
-import { SmartWarehouseFeature } from "@/features/public-pages/components/SmartWarehouseFeature";
 import { CustomerSolutionsGrid } from "@/features/public-pages/components/CustomerSolutionsGrid";
 import { TestimonialsSection } from "@/features/public-pages/components/TestimonialsSection";
 
 export default function HomePage() {
   return (
     <div className="space-y-16 sm:space-y-24 pb-20">
-      {/* 1. Hero with Fleet Background & Tracking Bar */}
+      {/* 1. Hero with Animated Split-Text & Telematics Search */}
       <HomeHeroVisual />
 
       {/* 2. Global Partner Accreditation Strip */}
       <PartnerLogosBar />
 
-      {/* 3. Global Network Stats */}
+      {/* 3. Multimodal Logistics Accordion with Numbered Tabs & Media Badge */}
       <section className="container max-w-7xl mx-auto px-4 sm:px-6">
-        <NetworkStatsBar />
+        <LogisticsAccordionSection />
       </section>
 
       {/* 4. Trusted Services Feature with Facility Image */}
@@ -27,27 +27,27 @@ export default function HomePage() {
         <TrustedServicesFeature />
       </section>
 
-      {/* 5. Industry Leaders with Freight Highway Image */}
+      {/* 5. Network Operational Scale Hero Section with Background Image */}
+      <section className="w-full">
+        <NetworkStatsHeroSection />
+      </section>
+
+      {/* 6. Industry Leaders Highway Transport */}
       <section className="container max-w-7xl mx-auto px-4 sm:px-6">
         <IndustryLeadersSection />
       </section>
 
-      {/* 6. Priority Air Cargo Feature */}
+      {/* 8. Priority Air Cargo Feature */}
       <section className="container max-w-7xl mx-auto px-4 sm:px-6">
         <AirFreightFeature />
       </section>
 
-      {/* 7. Multimodal Ocean Ports & Smart Warehousing */}
-      <section className="container max-w-7xl mx-auto px-4 sm:px-6">
-        <SmartWarehouseFeature />
-      </section>
-
-      {/* 8. Returns & Business Solutions Photo Cards */}
+      {/* 9. Business Solutions & Freight Cards */}
       <section className="container max-w-7xl mx-auto px-4 sm:px-6">
         <CustomerSolutionsGrid />
       </section>
 
-      {/* 9. Verified Client Testimonials with Avatars */}
+      {/* 10. Verified Client Testimonials */}
       <section className="container max-w-7xl mx-auto px-4 sm:px-6">
         <TestimonialsSection />
       </section>
